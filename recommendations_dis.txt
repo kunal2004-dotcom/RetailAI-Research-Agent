@@ -1,0 +1,810 @@
+  0           RESUME                   0
+
+  1           LOAD_SMALL_INT           0
+              LOAD_CONST               1 (None)
+              IMPORT_NAME              0 (logging)
+              STORE_NAME               0 (logging)
+
+  2           LOAD_SMALL_INT           0
+              LOAD_CONST               2 (('BaseModel', 'Field'))
+              IMPORT_NAME              1 (pydantic)
+              IMPORT_FROM              2 (BaseModel)
+              STORE_NAME               2 (BaseModel)
+              IMPORT_FROM              3 (Field)
+              STORE_NAME               3 (Field)
+              POP_TOP
+
+  3           LOAD_SMALL_INT           0
+              LOAD_CONST               3 (('ChatGoogleGenerativeAI',))
+              IMPORT_NAME              4 (langchain_google_genai)
+              IMPORT_FROM              5 (ChatGoogleGenerativeAI)
+              STORE_NAME               5 (ChatGoogleGenerativeAI)
+              POP_TOP
+
+  4           LOAD_SMALL_INT           0
+              LOAD_CONST               4 (('ResearchState',))
+              IMPORT_NAME              6 (backend.app.ai.state)
+              IMPORT_FROM              7 (ResearchState)
+              STORE_NAME               7 (ResearchState)
+              POP_TOP
+
+  5           LOAD_SMALL_INT           0
+              LOAD_CONST               5 (('settings',))
+              IMPORT_NAME              8 (backend.app.core.config)
+              IMPORT_FROM              9 (settings)
+              STORE_NAME               9 (settings)
+              POP_TOP
+
+  7           LOAD_NAME                0 (logging)
+              LOAD_ATTR               20 (getLogger)
+              PUSH_NULL
+              LOAD_NAME               11 (__name__)
+              CALL                     1
+              STORE_NAME              12 (logger)
+
+  9           LOAD_BUILD_CLASS
+              PUSH_NULL
+              LOAD_CONST               6 (<code object RecommendationItem at 0x0000022C5830B330, file "C:\Users\acer\Desktop\RetailAI-Research-Agent\backend\app\ai\nodes\recommendations.py", line 9>)
+              MAKE_FUNCTION
+              LOAD_CONST               7 ('RecommendationItem')
+              LOAD_NAME                2 (BaseModel)
+              CALL                     3
+              STORE_NAME              13 (RecommendationItem)
+
+ 14           LOAD_BUILD_CLASS
+              PUSH_NULL
+              LOAD_CONST               8 (<code object RecommendationsList at 0x0000022C5830B130, file "C:\Users\acer\Desktop\RetailAI-Research-Agent\backend\app\ai\nodes\recommendations.py", line 14>)
+              MAKE_FUNCTION
+              LOAD_CONST               9 ('RecommendationsList')
+              LOAD_NAME                2 (BaseModel)
+              CALL                     3
+              STORE_NAME              14 (RecommendationsList)
+
+ 17           LOAD_CONST              10 (<code object __annotate__ at 0x0000022C5830B830, file "C:\Users\acer\Desktop\RetailAI-Research-Agent\backend\app\ai\nodes\recommendations.py", line 17>)
+              MAKE_FUNCTION
+              LOAD_CONST              11 (<code object generate_recommendations at 0x0000022C584A8D80, file "C:\Users\acer\Desktop\RetailAI-Research-Agent\backend\app\ai\nodes\recommendations.py", line 17>)
+              MAKE_FUNCTION
+              SET_FUNCTION_ATTRIBUTE  16 (annotate)
+              STORE_NAME              15 (generate_recommendations)
+              LOAD_CONST               1 (None)
+              RETURN_VALUE
+
+Disassembly of <code object RecommendationItem at 0x0000022C5830B330, file "C:\Users\acer\Desktop\RetailAI-Research-Agent\backend\app\ai\nodes\recommendations.py", line 9>:
+  --           MAKE_CELL                0 (__classdict__)
+
+   9           RESUME                   0
+               LOAD_NAME                0 (__name__)
+               STORE_NAME               1 (__module__)
+               LOAD_CONST               0 ('RecommendationItem')
+               STORE_NAME               2 (__qualname__)
+               LOAD_SMALL_INT           9
+               STORE_NAME               3 (__firstlineno__)
+               LOAD_LOCALS
+               STORE_DEREF              0 (__classdict__)
+               LOAD_FAST_BORROW         0 (__classdict__)
+               BUILD_TUPLE              1
+               LOAD_CONST               1 (<code object __annotate__ at 0x0000022C586C08B0, file "C:\Users\acer\Desktop\RetailAI-Research-Agent\backend\app\ai\nodes\recommendations.py", line 9>)
+               MAKE_FUNCTION
+               SET_FUNCTION_ATTRIBUTE   8 (closure)
+               STORE_NAME               4 (__annotate_func__)
+               LOAD_CONST               2 (())
+               STORE_NAME               5 (__static_attributes__)
+               LOAD_FAST_BORROW         0 (__classdict__)
+               STORE_NAME               6 (__classdictcell__)
+               LOAD_CONST               3 (None)
+               RETURN_VALUE
+
+Disassembly of <code object __annotate__ at 0x0000022C586C08B0, file "C:\Users\acer\Desktop\RetailAI-Research-Agent\backend\app\ai\nodes\recommendations.py", line 9>:
+  --           COPY_FREE_VARS           1
+
+   9           RESUME                   0
+               LOAD_FAST_BORROW         0 (format)
+               LOAD_SMALL_INT           2
+               COMPARE_OP             132 (>)
+               POP_JUMP_IF_FALSE        3 (to L1)
+               NOT_TAKEN
+               LOAD_COMMON_CONSTANT     1 (NotImplementedError)
+               RAISE_VARARGS            1
+       L1:     BUILD_MAP                0
+
+  10           LOAD_DEREF               1 (__classdict__)
+               LOAD_FROM_DICT_OR_GLOBALS 0 (str)
+               COPY                     2
+               LOAD_CONST               1 ('recommendation')
+
+   9           STORE_SUBSCR
+
+  11           LOAD_DEREF               1 (__classdict__)
+               LOAD_FROM_DICT_OR_GLOBALS 0 (str)
+               COPY                     2
+               LOAD_CONST               2 ('rationale')
+
+   9           STORE_SUBSCR
+
+  12           LOAD_DEREF               1 (__classdict__)
+               LOAD_FROM_DICT_OR_GLOBALS 1 (float)
+               COPY                     2
+               LOAD_CONST               3 ('confidence')
+
+   9           STORE_SUBSCR
+               RETURN_VALUE
+
+Disassembly of <code object RecommendationsList at 0x0000022C5830B130, file "C:\Users\acer\Desktop\RetailAI-Research-Agent\backend\app\ai\nodes\recommendations.py", line 14>:
+  --           MAKE_CELL                0 (__classdict__)
+
+  14           RESUME                   0
+               LOAD_NAME                0 (__name__)
+               STORE_NAME               1 (__module__)
+               LOAD_CONST               0 ('RecommendationsList')
+               STORE_NAME               2 (__qualname__)
+               LOAD_SMALL_INT          14
+               STORE_NAME               3 (__firstlineno__)
+               LOAD_LOCALS
+               STORE_DEREF              0 (__classdict__)
+               LOAD_FAST_BORROW         0 (__classdict__)
+               BUILD_TUPLE              1
+               LOAD_CONST               1 (<code object __annotate__ at 0x0000022C586C0AD0, file "C:\Users\acer\Desktop\RetailAI-Research-Agent\backend\app\ai\nodes\recommendations.py", line 14>)
+               MAKE_FUNCTION
+               SET_FUNCTION_ATTRIBUTE   8 (closure)
+               STORE_NAME               4 (__annotate_func__)
+               LOAD_CONST               2 (())
+               STORE_NAME               5 (__static_attributes__)
+               LOAD_FAST_BORROW         0 (__classdict__)
+               STORE_NAME               6 (__classdictcell__)
+               LOAD_CONST               3 (None)
+               RETURN_VALUE
+
+Disassembly of <code object __annotate__ at 0x0000022C586C0AD0, file "C:\Users\acer\Desktop\RetailAI-Research-Agent\backend\app\ai\nodes\recommendations.py", line 14>:
+  --           COPY_FREE_VARS           1
+
+  14           RESUME                   0
+               LOAD_FAST_BORROW         0 (format)
+               LOAD_SMALL_INT           2
+               COMPARE_OP             132 (>)
+               POP_JUMP_IF_FALSE        3 (to L1)
+               NOT_TAKEN
+               LOAD_COMMON_CONSTANT     1 (NotImplementedError)
+               RAISE_VARARGS            1
+       L1:     BUILD_MAP                0
+
+  15           LOAD_DEREF               1 (__classdict__)
+               LOAD_FROM_DICT_OR_GLOBALS 0 (list)
+               LOAD_DEREF               1 (__classdict__)
+               LOAD_FROM_DICT_OR_GLOBALS 1 (RecommendationItem)
+               BINARY_OP               26 ([])
+               COPY                     2
+               LOAD_CONST               1 ('items')
+
+  14           STORE_SUBSCR
+               RETURN_VALUE
+
+Disassembly of <code object __annotate__ at 0x0000022C5830B830, file "C:\Users\acer\Desktop\RetailAI-Research-Agent\backend\app\ai\nodes\recommendations.py", line 17>:
+ 17           RESUME                   0
+              LOAD_FAST_BORROW         0 (format)
+              LOAD_SMALL_INT           2
+              COMPARE_OP             132 (>)
+              POP_JUMP_IF_FALSE        3 (to L1)
+              NOT_TAKEN
+              LOAD_COMMON_CONSTANT     1 (NotImplementedError)
+              RAISE_VARARGS            1
+      L1:     LOAD_CONST               1 ('state')
+              LOAD_GLOBAL              0 (ResearchState)
+              LOAD_CONST               2 ('return')
+              LOAD_GLOBAL              0 (ResearchState)
+              BUILD_MAP                2
+              RETURN_VALUE
+
+Disassembly of <code object generate_recommendations at 0x0000022C584A8D80, file "C:\Users\acer\Desktop\RetailAI-Research-Agent\backend\app\ai\nodes\recommendations.py", line 17>:
+  17            RESUME                   0
+
+  18            LOAD_GLOBAL              0 (logger)
+                LOAD_ATTR                3 (info + NULL|self)
+                LOAD_CONST               0 ('Session ')
+                LOAD_FAST_BORROW         0 (state)
+                LOAD_CONST               1 ('session_id')
+                BINARY_OP               26 ([])
+                FORMAT_SIMPLE
+                LOAD_CONST               2 (': Running Recommendation Generation')
+                BUILD_STRING             3
+                CALL                     1
+                POP_TOP
+
+  19            LOAD_CONST               3 ('recommendations')
+                LOAD_FAST_BORROW         0 (state)
+                LOAD_CONST               4 ('current_step')
+                STORE_SUBSCR
+
+  21            LOAD_FAST_BORROW         0 (state)
+                LOAD_CONST               5 ('findings')
+                BINARY_OP               26 ([])
+                TO_BOOL
+                POP_JUMP_IF_TRUE         3 (to L1)
+                NOT_TAKEN
+
+  22            LOAD_FAST_BORROW         0 (state)
+                RETURN_VALUE
+
+  24    L1:     NOP
+
+  25    L2:     LOAD_GLOBAL              4 (settings)
+                LOAD_ATTR                6 (gemini_api_key)
+                LOAD_CONST              27 (('your_gemini_api_key_here', 'dummy'))
+                CONTAINS_OP              0 (in)
+                POP_JUMP_IF_FALSE       36 (to L4)
+                NOT_TAKEN
+
+  26            LOAD_GLOBAL              0 (logger)
+                LOAD_ATTR                9 (warning + NULL|self)
+                LOAD_CONST               6 ('No Gemini API key found, using fallback recommendations logic.')
+                CALL                     1
+                POP_TOP
+
+  28            LOAD_CONST               7 ('recommendation')
+                LOAD_CONST               8 ('Mock actionable recommendation.')
+
+  29            LOAD_CONST               9 ('rationale')
+                LOAD_CONST              10 ('Based on mock findings.')
+
+  30            LOAD_CONST              11 ('confidence')
+                LOAD_CONST              12 (0.9)
+
+  27            BUILD_MAP                3
+                BUILD_LIST               1
+                LOAD_FAST_BORROW         0 (state)
+                LOAD_CONST               3 ('recommendations')
+                STORE_SUBSCR
+
+  32            LOAD_FAST_BORROW         0 (state)
+        L3:     RETURN_VALUE
+
+  34    L4:     LOAD_GLOBAL             11 (ChatGoogleGenerativeAI + NULL)
+                LOAD_CONST              13 ('gemini-3.5-flash')
+                LOAD_GLOBAL              4 (settings)
+                LOAD_ATTR                6 (gemini_api_key)
+                LOAD_SMALL_INT          10
+                LOAD_CONST              14 (('model', 'google_api_key', 'max_retries'))
+                CALL_KW                  3
+                STORE_FAST               1 (llm)
+
+  35            LOAD_FAST_BORROW         1 (llm)
+                LOAD_ATTR               13 (with_structured_output + NULL|self)
+                LOAD_GLOBAL             14 (RecommendationsList)
+                CALL                     1
+                STORE_FAST               2 (structured_llm)
+
+  37            LOAD_CONST              15 ('\n')
+                LOAD_ATTR               17 (join + NULL|self)
+                LOAD_FAST_BORROW         0 (state)
+                LOAD_CONST               5 ('findings')
+                BINARY_OP               26 ([])
+                GET_ITER
+                LOAD_FAST_AND_CLEAR      3 (f)
+                SWAP                     2
+        L5:     BUILD_LIST               0
+                SWAP                     2
+        L6:     FOR_ITER                15 (to L7)
+                STORE_FAST               3 (f)
+                LOAD_CONST              16 ('- ')
+                LOAD_FAST_BORROW         3 (f)
+                LOAD_CONST              17 ('statement')
+                BINARY_OP               26 ([])
+                FORMAT_SIMPLE
+                BUILD_STRING             2
+                LIST_APPEND              2
+                JUMP_BACKWARD           17 (to L6)
+        L7:     END_FOR
+                POP_ITER
+        L8:     SWAP                     2
+                STORE_FAST               3 (f)
+                CALL                     1
+                STORE_FAST               4 (findings_context)
+
+  38            LOAD_CONST              18 ('Research Question: ')
+                LOAD_FAST_BORROW         0 (state)
+                LOAD_CONST              19 ('research_question')
+                BINARY_OP               26 ([])
+                FORMAT_SIMPLE
+                LOAD_CONST              20 ('\nFindings:\n')
+                LOAD_FAST_BORROW         4 (findings_context)
+                FORMAT_SIMPLE
+                LOAD_CONST              21 ('\nGenerate actionable recommendations.')
+                BUILD_STRING             5
+                STORE_FAST               5 (prompt)
+
+  40            LOAD_FAST_BORROW         2 (structured_llm)
+                LOAD_ATTR               19 (invoke + NULL|self)
+                LOAD_FAST_BORROW         5 (prompt)
+                CALL                     1
+                STORE_FAST               6 (result)
+
+  41            BUILD_LIST               0
+                STORE_FAST               7 (recommendations)
+
+  42            LOAD_FAST_BORROW         6 (result)
+                LOAD_ATTR               20 (items)
+                GET_ITER
+        L9:     FOR_ITER                56 (to L10)
+                STORE_FAST               8 (item)
+
+  43            LOAD_FAST_BORROW         7 (recommendations)
+                LOAD_ATTR               23 (append + NULL|self)
+
+  44            LOAD_CONST               7 ('recommendation')
+                LOAD_FAST_BORROW         8 (item)
+                LOAD_ATTR               24 (recommendation)
+
+  45            LOAD_CONST               9 ('rationale')
+                LOAD_FAST_BORROW         8 (item)
+                LOAD_ATTR               26 (rationale)
+
+  46            LOAD_CONST              11 ('confidence')
+                LOAD_FAST_BORROW         8 (item)
+                LOAD_ATTR               28 (confidence)
+
+  43            BUILD_MAP                3
+                CALL                     1
+                POP_TOP
+                JUMP_BACKWARD           58 (to L9)
+
+  42   L10:     END_FOR
+                POP_ITER
+
+  48            LOAD_FAST_BORROW_LOAD_FAST_BORROW 112 (recommendations, state)
+                LOAD_CONST               3 ('recommendations')
+                STORE_SUBSCR
+
+  49            LOAD_GLOBAL              0 (logger)
+                LOAD_ATTR                3 (info + NULL|self)
+                LOAD_CONST               0 ('Session ')
+                LOAD_FAST_BORROW         0 (state)
+                LOAD_CONST               1 ('session_id')
+                BINARY_OP               26 ([])
+                FORMAT_SIMPLE
+                LOAD_CONST              22 (': Generated ')
+                LOAD_GLOBAL             31 (len + NULL)
+                LOAD_FAST_BORROW         7 (recommendations)
+                CALL                     1
+                FORMAT_SIMPLE
+                LOAD_CONST              23 (' recommendations.')
+                BUILD_STRING             5
+                CALL                     1
+                POP_TOP
+
+  53   L11:     LOAD_FAST_BORROW         0 (state)
+                RETURN_VALUE
+
+  --   L12:     SWAP                     2
+                POP_TOP
+
+  37            SWAP                     2
+                STORE_FAST               3 (f)
+                RERAISE                  0
+
+  --   L13:     PUSH_EXC_INFO
+
+  50            LOAD_GLOBAL             32 (Exception)
+                CHECK_EXC_MATCH
+                POP_JUMP_IF_FALSE       72 (to L17)
+                NOT_TAKEN
+                STORE_FAST               9 (e)
+
+  51   L14:     LOAD_GLOBAL              0 (logger)
+                LOAD_ATTR               35 (error + NULL|self)
+                LOAD_CONST              24 ('Recommendation generation error: ')
+                LOAD_FAST                9 (e)
+                FORMAT_SIMPLE
+                BUILD_STRING             2
+                CALL                     1
+                POP_TOP
+
+  52            LOAD_FAST                0 (state)
+                LOAD_CONST              25 ('errors')
+                BINARY_OP               26 ([])
+                LOAD_ATTR               23 (append + NULL|self)
+                LOAD_CONST              24 ('Recommendation generation error: ')
+                LOAD_GLOBAL             37 (str + NULL)
+                LOAD_FAST                9 (e)
+                CALL                     1
+                FORMAT_SIMPLE
+                BUILD_STRING             2
+                CALL                     1
+                POP_TOP
+       L15:     POP_EXCEPT
+                LOAD_CONST              26 (None)
+                STORE_FAST               9 (e)
+                DELETE_FAST              9 (e)
+
+  53            LOAD_FAST                0 (state)
+                RETURN_VALUE
+
+  --   L16:     LOAD_CONST              26 (None)
+                STORE_FAST               9 (e)
+                DELETE_FAST              9 (e)
+                RERAISE                  1
+
+  50   L17:     RERAISE                  0
+
+  --   L18:     COPY                     3
+                POP_EXCEPT
+                RERAISE                  1
+ExceptionTable:
+  L2 to L3 -> L13 [0]
+  L4 to L5 -> L13 [0]
+  L5 to L8 -> L12 [4]
+  L8 to L11 -> L13 [0]
+  L12 to L13 -> L13 [0]
+  L13 to L14 -> L18 [1] lasti
+  L14 to L15 -> L16 [1] lasti
+  L16 to L18 -> L18 [1] lasti
+
+
+--- Function RecommendationItem ---
+  --           MAKE_CELL                0 (__classdict__)
+
+   9           RESUME                   0
+               LOAD_NAME                0 (__name__)
+               STORE_NAME               1 (__module__)
+               LOAD_CONST               0 ('RecommendationItem')
+               STORE_NAME               2 (__qualname__)
+               LOAD_SMALL_INT           9
+               STORE_NAME               3 (__firstlineno__)
+               LOAD_LOCALS
+               STORE_DEREF              0 (__classdict__)
+               LOAD_FAST_BORROW         0 (__classdict__)
+               BUILD_TUPLE              1
+               LOAD_CONST               1 (<code object __annotate__ at 0x0000022C586C08B0, file "C:\Users\acer\Desktop\RetailAI-Research-Agent\backend\app\ai\nodes\recommendations.py", line 9>)
+               MAKE_FUNCTION
+               SET_FUNCTION_ATTRIBUTE   8 (closure)
+               STORE_NAME               4 (__annotate_func__)
+               LOAD_CONST               2 (())
+               STORE_NAME               5 (__static_attributes__)
+               LOAD_FAST_BORROW         0 (__classdict__)
+               STORE_NAME               6 (__classdictcell__)
+               LOAD_CONST               3 (None)
+               RETURN_VALUE
+
+Disassembly of <code object __annotate__ at 0x0000022C586C08B0, file "C:\Users\acer\Desktop\RetailAI-Research-Agent\backend\app\ai\nodes\recommendations.py", line 9>:
+  --           COPY_FREE_VARS           1
+
+   9           RESUME                   0
+               LOAD_FAST_BORROW         0 (format)
+               LOAD_SMALL_INT           2
+               COMPARE_OP             132 (>)
+               POP_JUMP_IF_FALSE        3 (to L1)
+               NOT_TAKEN
+               LOAD_COMMON_CONSTANT     1 (NotImplementedError)
+               RAISE_VARARGS            1
+       L1:     BUILD_MAP                0
+
+  10           LOAD_DEREF               1 (__classdict__)
+               LOAD_FROM_DICT_OR_GLOBALS 0 (str)
+               COPY                     2
+               LOAD_CONST               1 ('recommendation')
+
+   9           STORE_SUBSCR
+
+  11           LOAD_DEREF               1 (__classdict__)
+               LOAD_FROM_DICT_OR_GLOBALS 0 (str)
+               COPY                     2
+               LOAD_CONST               2 ('rationale')
+
+   9           STORE_SUBSCR
+
+  12           LOAD_DEREF               1 (__classdict__)
+               LOAD_FROM_DICT_OR_GLOBALS 1 (float)
+               COPY                     2
+               LOAD_CONST               3 ('confidence')
+
+   9           STORE_SUBSCR
+               RETURN_VALUE
+
+
+--- Function RecommendationsList ---
+  --           MAKE_CELL                0 (__classdict__)
+
+  14           RESUME                   0
+               LOAD_NAME                0 (__name__)
+               STORE_NAME               1 (__module__)
+               LOAD_CONST               0 ('RecommendationsList')
+               STORE_NAME               2 (__qualname__)
+               LOAD_SMALL_INT          14
+               STORE_NAME               3 (__firstlineno__)
+               LOAD_LOCALS
+               STORE_DEREF              0 (__classdict__)
+               LOAD_FAST_BORROW         0 (__classdict__)
+               BUILD_TUPLE              1
+               LOAD_CONST               1 (<code object __annotate__ at 0x0000022C586C0AD0, file "C:\Users\acer\Desktop\RetailAI-Research-Agent\backend\app\ai\nodes\recommendations.py", line 14>)
+               MAKE_FUNCTION
+               SET_FUNCTION_ATTRIBUTE   8 (closure)
+               STORE_NAME               4 (__annotate_func__)
+               LOAD_CONST               2 (())
+               STORE_NAME               5 (__static_attributes__)
+               LOAD_FAST_BORROW         0 (__classdict__)
+               STORE_NAME               6 (__classdictcell__)
+               LOAD_CONST               3 (None)
+               RETURN_VALUE
+
+Disassembly of <code object __annotate__ at 0x0000022C586C0AD0, file "C:\Users\acer\Desktop\RetailAI-Research-Agent\backend\app\ai\nodes\recommendations.py", line 14>:
+  --           COPY_FREE_VARS           1
+
+  14           RESUME                   0
+               LOAD_FAST_BORROW         0 (format)
+               LOAD_SMALL_INT           2
+               COMPARE_OP             132 (>)
+               POP_JUMP_IF_FALSE        3 (to L1)
+               NOT_TAKEN
+               LOAD_COMMON_CONSTANT     1 (NotImplementedError)
+               RAISE_VARARGS            1
+       L1:     BUILD_MAP                0
+
+  15           LOAD_DEREF               1 (__classdict__)
+               LOAD_FROM_DICT_OR_GLOBALS 0 (list)
+               LOAD_DEREF               1 (__classdict__)
+               LOAD_FROM_DICT_OR_GLOBALS 1 (RecommendationItem)
+               BINARY_OP               26 ([])
+               COPY                     2
+               LOAD_CONST               1 ('items')
+
+  14           STORE_SUBSCR
+               RETURN_VALUE
+
+
+--- Function __annotate__ ---
+ 17           RESUME                   0
+              LOAD_FAST_BORROW         0 (format)
+              LOAD_SMALL_INT           2
+              COMPARE_OP             132 (>)
+              POP_JUMP_IF_FALSE        3 (to L1)
+              NOT_TAKEN
+              LOAD_COMMON_CONSTANT     1 (NotImplementedError)
+              RAISE_VARARGS            1
+      L1:     LOAD_CONST               1 ('state')
+              LOAD_GLOBAL              0 (ResearchState)
+              LOAD_CONST               2 ('return')
+              LOAD_GLOBAL              0 (ResearchState)
+              BUILD_MAP                2
+              RETURN_VALUE
+
+
+--- Function generate_recommendations ---
+  17            RESUME                   0
+
+  18            LOAD_GLOBAL              0 (logger)
+                LOAD_ATTR                3 (info + NULL|self)
+                LOAD_CONST               0 ('Session ')
+                LOAD_FAST_BORROW         0 (state)
+                LOAD_CONST               1 ('session_id')
+                BINARY_OP               26 ([])
+                FORMAT_SIMPLE
+                LOAD_CONST               2 (': Running Recommendation Generation')
+                BUILD_STRING             3
+                CALL                     1
+                POP_TOP
+
+  19            LOAD_CONST               3 ('recommendations')
+                LOAD_FAST_BORROW         0 (state)
+                LOAD_CONST               4 ('current_step')
+                STORE_SUBSCR
+
+  21            LOAD_FAST_BORROW         0 (state)
+                LOAD_CONST               5 ('findings')
+                BINARY_OP               26 ([])
+                TO_BOOL
+                POP_JUMP_IF_TRUE         3 (to L1)
+                NOT_TAKEN
+
+  22            LOAD_FAST_BORROW         0 (state)
+                RETURN_VALUE
+
+  24    L1:     NOP
+
+  25    L2:     LOAD_GLOBAL              4 (settings)
+                LOAD_ATTR                6 (gemini_api_key)
+                LOAD_CONST              27 (('your_gemini_api_key_here', 'dummy'))
+                CONTAINS_OP              0 (in)
+                POP_JUMP_IF_FALSE       36 (to L4)
+                NOT_TAKEN
+
+  26            LOAD_GLOBAL              0 (logger)
+                LOAD_ATTR                9 (warning + NULL|self)
+                LOAD_CONST               6 ('No Gemini API key found, using fallback recommendations logic.')
+                CALL                     1
+                POP_TOP
+
+  28            LOAD_CONST               7 ('recommendation')
+                LOAD_CONST               8 ('Mock actionable recommendation.')
+
+  29            LOAD_CONST               9 ('rationale')
+                LOAD_CONST              10 ('Based on mock findings.')
+
+  30            LOAD_CONST              11 ('confidence')
+                LOAD_CONST              12 (0.9)
+
+  27            BUILD_MAP                3
+                BUILD_LIST               1
+                LOAD_FAST_BORROW         0 (state)
+                LOAD_CONST               3 ('recommendations')
+                STORE_SUBSCR
+
+  32            LOAD_FAST_BORROW         0 (state)
+        L3:     RETURN_VALUE
+
+  34    L4:     LOAD_GLOBAL             11 (ChatGoogleGenerativeAI + NULL)
+                LOAD_CONST              13 ('gemini-3.5-flash')
+                LOAD_GLOBAL              4 (settings)
+                LOAD_ATTR                6 (gemini_api_key)
+                LOAD_SMALL_INT          10
+                LOAD_CONST              14 (('model', 'google_api_key', 'max_retries'))
+                CALL_KW                  3
+                STORE_FAST               1 (llm)
+
+  35            LOAD_FAST_BORROW         1 (llm)
+                LOAD_ATTR               13 (with_structured_output + NULL|self)
+                LOAD_GLOBAL             14 (RecommendationsList)
+                CALL                     1
+                STORE_FAST               2 (structured_llm)
+
+  37            LOAD_CONST              15 ('\n')
+                LOAD_ATTR               17 (join + NULL|self)
+                LOAD_FAST_BORROW         0 (state)
+                LOAD_CONST               5 ('findings')
+                BINARY_OP               26 ([])
+                GET_ITER
+                LOAD_FAST_AND_CLEAR      3 (f)
+                SWAP                     2
+        L5:     BUILD_LIST               0
+                SWAP                     2
+        L6:     FOR_ITER                15 (to L7)
+                STORE_FAST               3 (f)
+                LOAD_CONST              16 ('- ')
+                LOAD_FAST_BORROW         3 (f)
+                LOAD_CONST              17 ('statement')
+                BINARY_OP               26 ([])
+                FORMAT_SIMPLE
+                BUILD_STRING             2
+                LIST_APPEND              2
+                JUMP_BACKWARD           17 (to L6)
+        L7:     END_FOR
+                POP_ITER
+        L8:     SWAP                     2
+                STORE_FAST               3 (f)
+                CALL                     1
+                STORE_FAST               4 (findings_context)
+
+  38            LOAD_CONST              18 ('Research Question: ')
+                LOAD_FAST_BORROW         0 (state)
+                LOAD_CONST              19 ('research_question')
+                BINARY_OP               26 ([])
+                FORMAT_SIMPLE
+                LOAD_CONST              20 ('\nFindings:\n')
+                LOAD_FAST_BORROW         4 (findings_context)
+                FORMAT_SIMPLE
+                LOAD_CONST              21 ('\nGenerate actionable recommendations.')
+                BUILD_STRING             5
+                STORE_FAST               5 (prompt)
+
+  40            LOAD_FAST_BORROW         2 (structured_llm)
+                LOAD_ATTR               19 (invoke + NULL|self)
+                LOAD_FAST_BORROW         5 (prompt)
+                CALL                     1
+                STORE_FAST               6 (result)
+
+  41            BUILD_LIST               0
+                STORE_FAST               7 (recommendations)
+
+  42            LOAD_FAST_BORROW         6 (result)
+                LOAD_ATTR               20 (items)
+                GET_ITER
+        L9:     FOR_ITER                56 (to L10)
+                STORE_FAST               8 (item)
+
+  43            LOAD_FAST_BORROW         7 (recommendations)
+                LOAD_ATTR               23 (append + NULL|self)
+
+  44            LOAD_CONST               7 ('recommendation')
+                LOAD_FAST_BORROW         8 (item)
+                LOAD_ATTR               24 (recommendation)
+
+  45            LOAD_CONST               9 ('rationale')
+                LOAD_FAST_BORROW         8 (item)
+                LOAD_ATTR               26 (rationale)
+
+  46            LOAD_CONST              11 ('confidence')
+                LOAD_FAST_BORROW         8 (item)
+                LOAD_ATTR               28 (confidence)
+
+  43            BUILD_MAP                3
+                CALL                     1
+                POP_TOP
+                JUMP_BACKWARD           58 (to L9)
+
+  42   L10:     END_FOR
+                POP_ITER
+
+  48            LOAD_FAST_BORROW_LOAD_FAST_BORROW 112 (recommendations, state)
+                LOAD_CONST               3 ('recommendations')
+                STORE_SUBSCR
+
+  49            LOAD_GLOBAL              0 (logger)
+                LOAD_ATTR                3 (info + NULL|self)
+                LOAD_CONST               0 ('Session ')
+                LOAD_FAST_BORROW         0 (state)
+                LOAD_CONST               1 ('session_id')
+                BINARY_OP               26 ([])
+                FORMAT_SIMPLE
+                LOAD_CONST              22 (': Generated ')
+                LOAD_GLOBAL             31 (len + NULL)
+                LOAD_FAST_BORROW         7 (recommendations)
+                CALL                     1
+                FORMAT_SIMPLE
+                LOAD_CONST              23 (' recommendations.')
+                BUILD_STRING             5
+                CALL                     1
+                POP_TOP
+
+  53   L11:     LOAD_FAST_BORROW         0 (state)
+                RETURN_VALUE
+
+  --   L12:     SWAP                     2
+                POP_TOP
+
+  37            SWAP                     2
+                STORE_FAST               3 (f)
+                RERAISE                  0
+
+  --   L13:     PUSH_EXC_INFO
+
+  50            LOAD_GLOBAL             32 (Exception)
+                CHECK_EXC_MATCH
+                POP_JUMP_IF_FALSE       72 (to L17)
+                NOT_TAKEN
+                STORE_FAST               9 (e)
+
+  51   L14:     LOAD_GLOBAL              0 (logger)
+                LOAD_ATTR               35 (error + NULL|self)
+                LOAD_CONST              24 ('Recommendation generation error: ')
+                LOAD_FAST                9 (e)
+                FORMAT_SIMPLE
+                BUILD_STRING             2
+                CALL                     1
+                POP_TOP
+
+  52            LOAD_FAST                0 (state)
+                LOAD_CONST              25 ('errors')
+                BINARY_OP               26 ([])
+                LOAD_ATTR               23 (append + NULL|self)
+                LOAD_CONST              24 ('Recommendation generation error: ')
+                LOAD_GLOBAL             37 (str + NULL)
+                LOAD_FAST                9 (e)
+                CALL                     1
+                FORMAT_SIMPLE
+                BUILD_STRING             2
+                CALL                     1
+                POP_TOP
+       L15:     POP_EXCEPT
+                LOAD_CONST              26 (None)
+                STORE_FAST               9 (e)
+                DELETE_FAST              9 (e)
+
+  53            LOAD_FAST                0 (state)
+                RETURN_VALUE
+
+  --   L16:     LOAD_CONST              26 (None)
+                STORE_FAST               9 (e)
+                DELETE_FAST              9 (e)
+                RERAISE                  1
+
+  50   L17:     RERAISE                  0
+
+  --   L18:     COPY                     3
+                POP_EXCEPT
+                RERAISE                  1
+ExceptionTable:
+  L2 to L3 -> L13 [0]
+  L4 to L5 -> L13 [0]
+  L5 to L8 -> L12 [4]
+  L8 to L11 -> L13 [0]
+  L12 to L13 -> L13 [0]
+  L13 to L14 -> L18 [1] lasti
+  L14 to L15 -> L16 [1] lasti
+  L16 to L18 -> L18 [1] lasti

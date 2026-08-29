@@ -1,0 +1,547 @@
+  0           RESUME                   0
+
+  1           LOAD_SMALL_INT           0
+              LOAD_CONST               1 (None)
+              IMPORT_NAME              0 (logging)
+              STORE_NAME               0 (logging)
+
+  2           LOAD_SMALL_INT           0
+              LOAD_CONST               2 (('BaseModel', 'Field'))
+              IMPORT_NAME              1 (pydantic)
+              IMPORT_FROM              2 (BaseModel)
+              STORE_NAME               2 (BaseModel)
+              IMPORT_FROM              3 (Field)
+              STORE_NAME               3 (Field)
+              POP_TOP
+
+  3           LOAD_SMALL_INT           0
+              LOAD_CONST               3 (('ChatGoogleGenerativeAI',))
+              IMPORT_NAME              4 (langchain_google_genai)
+              IMPORT_FROM              5 (ChatGoogleGenerativeAI)
+              STORE_NAME               5 (ChatGoogleGenerativeAI)
+              POP_TOP
+
+  4           LOAD_SMALL_INT           0
+              LOAD_CONST               4 (('ResearchState',))
+              IMPORT_NAME              6 (backend.app.ai.state)
+              IMPORT_FROM              7 (ResearchState)
+              STORE_NAME               7 (ResearchState)
+              POP_TOP
+
+  5           LOAD_SMALL_INT           0
+              LOAD_CONST               5 (('settings',))
+              IMPORT_NAME              8 (backend.app.core.config)
+              IMPORT_FROM              9 (settings)
+              STORE_NAME               9 (settings)
+              POP_TOP
+
+  7           LOAD_NAME                0 (logging)
+              LOAD_ATTR               20 (getLogger)
+              PUSH_NULL
+              LOAD_NAME               11 (__name__)
+              CALL                     1
+              STORE_NAME              12 (logger)
+
+  8           LOAD_NAME                0 (logging)
+              LOAD_ATTR               26 (basicConfig)
+              PUSH_NULL
+              LOAD_NAME                0 (logging)
+              LOAD_ATTR               28 (INFO)
+              LOAD_CONST               6 (('level',))
+              CALL_KW                  1
+              POP_TOP
+
+ 10           LOAD_BUILD_CLASS
+              PUSH_NULL
+              LOAD_CONST               7 (<code object PlannerOutput at 0x0000022C586C07A0, file "C:\Users\acer\Desktop\RetailAI-Research-Agent\backend\app\ai\nodes\planner.py", line 10>)
+              MAKE_FUNCTION
+              LOAD_CONST               8 ('PlannerOutput')
+              LOAD_NAME                2 (BaseModel)
+              CALL                     3
+              STORE_NAME              15 (PlannerOutput)
+
+ 13           LOAD_CONST               9 (<code object __annotate__ at 0x0000022C5830A130, file "C:\Users\acer\Desktop\RetailAI-Research-Agent\backend\app\ai\nodes\planner.py", line 13>)
+              MAKE_FUNCTION
+              LOAD_CONST              10 (<code object plan_research at 0x0000022C57D05FD0, file "C:\Users\acer\Desktop\RetailAI-Research-Agent\backend\app\ai\nodes\planner.py", line 13>)
+              MAKE_FUNCTION
+              SET_FUNCTION_ATTRIBUTE  16 (annotate)
+              STORE_NAME              16 (plan_research)
+              LOAD_CONST               1 (None)
+              RETURN_VALUE
+
+Disassembly of <code object PlannerOutput at 0x0000022C586C07A0, file "C:\Users\acer\Desktop\RetailAI-Research-Agent\backend\app\ai\nodes\planner.py", line 10>:
+  --           MAKE_CELL                0 (__classdict__)
+
+  10           RESUME                   0
+               LOAD_NAME                0 (__name__)
+               STORE_NAME               1 (__module__)
+               LOAD_CONST               0 ('PlannerOutput')
+               STORE_NAME               2 (__qualname__)
+               LOAD_SMALL_INT          10
+               STORE_NAME               3 (__firstlineno__)
+               LOAD_LOCALS
+               STORE_DEREF              0 (__classdict__)
+
+  11           LOAD_NAME                4 (Field)
+               PUSH_NULL
+               LOAD_CONST               1 ('List of search queries')
+               LOAD_CONST               2 (('description',))
+               CALL_KW                  1
+               STORE_NAME               5 (queries)
+
+  10           LOAD_FAST_BORROW         0 (__classdict__)
+               BUILD_TUPLE              1
+               LOAD_CONST               3 (<code object __annotate__ at 0x0000022C58380030, file "C:\Users\acer\Desktop\RetailAI-Research-Agent\backend\app\ai\nodes\planner.py", line 10>)
+               MAKE_FUNCTION
+               SET_FUNCTION_ATTRIBUTE   8 (closure)
+               STORE_NAME               6 (__annotate_func__)
+               LOAD_CONST               4 (())
+               STORE_NAME               7 (__static_attributes__)
+               LOAD_FAST_BORROW         0 (__classdict__)
+               STORE_NAME               8 (__classdictcell__)
+               LOAD_CONST               5 (None)
+               RETURN_VALUE
+
+Disassembly of <code object __annotate__ at 0x0000022C58380030, file "C:\Users\acer\Desktop\RetailAI-Research-Agent\backend\app\ai\nodes\planner.py", line 10>:
+  --           COPY_FREE_VARS           1
+
+  10           RESUME                   0
+               LOAD_FAST_BORROW         0 (format)
+               LOAD_SMALL_INT           2
+               COMPARE_OP             132 (>)
+               POP_JUMP_IF_FALSE        3 (to L1)
+               NOT_TAKEN
+               LOAD_COMMON_CONSTANT     1 (NotImplementedError)
+               RAISE_VARARGS            1
+       L1:     BUILD_MAP                0
+
+  11           LOAD_DEREF               1 (__classdict__)
+               LOAD_FROM_DICT_OR_GLOBALS 0 (list)
+               LOAD_DEREF               1 (__classdict__)
+               LOAD_FROM_DICT_OR_GLOBALS 1 (str)
+               BINARY_OP               26 ([])
+               COPY                     2
+               LOAD_CONST               1 ('queries')
+
+  10           STORE_SUBSCR
+               RETURN_VALUE
+
+Disassembly of <code object __annotate__ at 0x0000022C5830A130, file "C:\Users\acer\Desktop\RetailAI-Research-Agent\backend\app\ai\nodes\planner.py", line 13>:
+ 13           RESUME                   0
+              LOAD_FAST_BORROW         0 (format)
+              LOAD_SMALL_INT           2
+              COMPARE_OP             132 (>)
+              POP_JUMP_IF_FALSE        3 (to L1)
+              NOT_TAKEN
+              LOAD_COMMON_CONSTANT     1 (NotImplementedError)
+              RAISE_VARARGS            1
+      L1:     LOAD_CONST               1 ('state')
+              LOAD_GLOBAL              0 (ResearchState)
+              LOAD_CONST               2 ('return')
+              LOAD_GLOBAL              0 (ResearchState)
+              BUILD_MAP                2
+              RETURN_VALUE
+
+Disassembly of <code object plan_research at 0x0000022C57D05FD0, file "C:\Users\acer\Desktop\RetailAI-Research-Agent\backend\app\ai\nodes\planner.py", line 13>:
+  13            RESUME                   0
+
+  14            LOAD_GLOBAL              0 (logger)
+                LOAD_ATTR                3 (info + NULL|self)
+                LOAD_CONST               0 ('Session ')
+                LOAD_FAST_BORROW         0 (state)
+                LOAD_CONST               1 ('session_id')
+                BINARY_OP               26 ([])
+                FORMAT_SIMPLE
+                LOAD_CONST               2 (': Running Planner')
+                BUILD_STRING             3
+                CALL                     1
+                POP_TOP
+
+  15            LOAD_CONST               3 ('planner')
+                LOAD_FAST_BORROW         0 (state)
+                LOAD_CONST               4 ('current_step')
+                STORE_SUBSCR
+
+  16            NOP
+
+  17    L1:     LOAD_GLOBAL              4 (settings)
+                LOAD_ATTR                6 (gemini_api_key)
+                LOAD_CONST              16 (('your_gemini_api_key_here', 'dummy'))
+                CONTAINS_OP              0 (in)
+                POP_JUMP_IF_FALSE       37 (to L3)
+                NOT_TAKEN
+
+  18            LOAD_GLOBAL              0 (logger)
+                LOAD_ATTR                9 (warning + NULL|self)
+                LOAD_CONST               5 ('No Gemini API key found, using fallback planner logic.')
+                CALL                     1
+                POP_TOP
+
+  19            LOAD_FAST_BORROW         0 (state)
+                LOAD_CONST               6 ('research_question')
+                BINARY_OP               26 ([])
+                BUILD_LIST               1
+                LOAD_FAST_BORROW         0 (state)
+                LOAD_CONST               7 ('search_queries')
+                STORE_SUBSCR
+
+  20            LOAD_FAST_BORROW         0 (state)
+        L2:     RETURN_VALUE
+
+  22    L3:     LOAD_GLOBAL             11 (ChatGoogleGenerativeAI + NULL)
+                LOAD_CONST               8 ('gemini-3.5-flash')
+                LOAD_GLOBAL              4 (settings)
+                LOAD_ATTR                6 (gemini_api_key)
+                LOAD_SMALL_INT          10
+                LOAD_CONST               9 (('model', 'google_api_key', 'max_retries'))
+                CALL_KW                  3
+                STORE_FAST               1 (llm)
+
+  23            LOAD_GLOBAL              0 (logger)
+                LOAD_ATTR                3 (info + NULL|self)
+                LOAD_CONST              10 ('LLM provider: ')
+                LOAD_FAST_BORROW         1 (llm)
+                LOAD_ATTR               12 (__class__)
+                LOAD_ATTR               14 (__name__)
+                FORMAT_SIMPLE
+                BUILD_STRING             2
+                CALL                     1
+                POP_TOP
+
+  24            LOAD_FAST_BORROW         1 (llm)
+                LOAD_ATTR               17 (with_structured_output + NULL|self)
+                LOAD_GLOBAL             18 (PlannerOutput)
+                CALL                     1
+                STORE_FAST               2 (structured_llm)
+
+  26            LOAD_CONST              11 ('Generate 3 focused search queries to research this question: ')
+                LOAD_FAST_BORROW         0 (state)
+                LOAD_CONST               6 ('research_question')
+                BINARY_OP               26 ([])
+                FORMAT_SIMPLE
+                BUILD_STRING             2
+                STORE_FAST               3 (prompt)
+
+  27            LOAD_FAST_BORROW         2 (structured_llm)
+                LOAD_ATTR               21 (invoke + NULL|self)
+                LOAD_FAST_BORROW         3 (prompt)
+                CALL                     1
+                STORE_FAST               4 (result)
+
+  29            LOAD_FAST_BORROW         4 (result)
+                LOAD_ATTR               22 (queries)
+                LOAD_FAST_BORROW         0 (state)
+                LOAD_CONST               7 ('search_queries')
+                STORE_SUBSCR
+
+  30            LOAD_GLOBAL              0 (logger)
+                LOAD_ATTR                3 (info + NULL|self)
+                LOAD_CONST               0 ('Session ')
+                LOAD_FAST_BORROW         0 (state)
+                LOAD_CONST               1 ('session_id')
+                BINARY_OP               26 ([])
+                FORMAT_SIMPLE
+                LOAD_CONST              12 (': Generated queries: ')
+                LOAD_FAST_BORROW         4 (result)
+                LOAD_ATTR               22 (queries)
+                FORMAT_SIMPLE
+                BUILD_STRING             4
+                CALL                     1
+                POP_TOP
+
+  34    L4:     LOAD_FAST_BORROW         0 (state)
+                RETURN_VALUE
+
+  --    L5:     PUSH_EXC_INFO
+
+  31            LOAD_GLOBAL             24 (Exception)
+                CHECK_EXC_MATCH
+                POP_JUMP_IF_FALSE       72 (to L9)
+                NOT_TAKEN
+                STORE_FAST               5 (e)
+
+  32    L6:     LOAD_GLOBAL              0 (logger)
+                LOAD_ATTR               27 (error + NULL|self)
+                LOAD_CONST              13 ('Planner error: ')
+                LOAD_FAST                5 (e)
+                FORMAT_SIMPLE
+                BUILD_STRING             2
+                CALL                     1
+                POP_TOP
+
+  33            LOAD_FAST                0 (state)
+                LOAD_CONST              14 ('errors')
+                BINARY_OP               26 ([])
+                LOAD_ATTR               29 (append + NULL|self)
+                LOAD_CONST              13 ('Planner error: ')
+                LOAD_GLOBAL             31 (str + NULL)
+                LOAD_FAST                5 (e)
+                CALL                     1
+                FORMAT_SIMPLE
+                BUILD_STRING             2
+                CALL                     1
+                POP_TOP
+        L7:     POP_EXCEPT
+                LOAD_CONST              15 (None)
+                STORE_FAST               5 (e)
+                DELETE_FAST              5 (e)
+
+  34            LOAD_FAST                0 (state)
+                RETURN_VALUE
+
+  --    L8:     LOAD_CONST              15 (None)
+                STORE_FAST               5 (e)
+                DELETE_FAST              5 (e)
+                RERAISE                  1
+
+  31    L9:     RERAISE                  0
+
+  --   L10:     COPY                     3
+                POP_EXCEPT
+                RERAISE                  1
+ExceptionTable:
+  L1 to L2 -> L5 [0]
+  L3 to L4 -> L5 [0]
+  L5 to L6 -> L10 [1] lasti
+  L6 to L7 -> L8 [1] lasti
+  L8 to L10 -> L10 [1] lasti
+
+
+--- Function PlannerOutput ---
+  --           MAKE_CELL                0 (__classdict__)
+
+  10           RESUME                   0
+               LOAD_NAME                0 (__name__)
+               STORE_NAME               1 (__module__)
+               LOAD_CONST               0 ('PlannerOutput')
+               STORE_NAME               2 (__qualname__)
+               LOAD_SMALL_INT          10
+               STORE_NAME               3 (__firstlineno__)
+               LOAD_LOCALS
+               STORE_DEREF              0 (__classdict__)
+
+  11           LOAD_NAME                4 (Field)
+               PUSH_NULL
+               LOAD_CONST               1 ('List of search queries')
+               LOAD_CONST               2 (('description',))
+               CALL_KW                  1
+               STORE_NAME               5 (queries)
+
+  10           LOAD_FAST_BORROW         0 (__classdict__)
+               BUILD_TUPLE              1
+               LOAD_CONST               3 (<code object __annotate__ at 0x0000022C58380030, file "C:\Users\acer\Desktop\RetailAI-Research-Agent\backend\app\ai\nodes\planner.py", line 10>)
+               MAKE_FUNCTION
+               SET_FUNCTION_ATTRIBUTE   8 (closure)
+               STORE_NAME               6 (__annotate_func__)
+               LOAD_CONST               4 (())
+               STORE_NAME               7 (__static_attributes__)
+               LOAD_FAST_BORROW         0 (__classdict__)
+               STORE_NAME               8 (__classdictcell__)
+               LOAD_CONST               5 (None)
+               RETURN_VALUE
+
+Disassembly of <code object __annotate__ at 0x0000022C58380030, file "C:\Users\acer\Desktop\RetailAI-Research-Agent\backend\app\ai\nodes\planner.py", line 10>:
+  --           COPY_FREE_VARS           1
+
+  10           RESUME                   0
+               LOAD_FAST_BORROW         0 (format)
+               LOAD_SMALL_INT           2
+               COMPARE_OP             132 (>)
+               POP_JUMP_IF_FALSE        3 (to L1)
+               NOT_TAKEN
+               LOAD_COMMON_CONSTANT     1 (NotImplementedError)
+               RAISE_VARARGS            1
+       L1:     BUILD_MAP                0
+
+  11           LOAD_DEREF               1 (__classdict__)
+               LOAD_FROM_DICT_OR_GLOBALS 0 (list)
+               LOAD_DEREF               1 (__classdict__)
+               LOAD_FROM_DICT_OR_GLOBALS 1 (str)
+               BINARY_OP               26 ([])
+               COPY                     2
+               LOAD_CONST               1 ('queries')
+
+  10           STORE_SUBSCR
+               RETURN_VALUE
+
+
+--- Function __annotate__ ---
+ 13           RESUME                   0
+              LOAD_FAST_BORROW         0 (format)
+              LOAD_SMALL_INT           2
+              COMPARE_OP             132 (>)
+              POP_JUMP_IF_FALSE        3 (to L1)
+              NOT_TAKEN
+              LOAD_COMMON_CONSTANT     1 (NotImplementedError)
+              RAISE_VARARGS            1
+      L1:     LOAD_CONST               1 ('state')
+              LOAD_GLOBAL              0 (ResearchState)
+              LOAD_CONST               2 ('return')
+              LOAD_GLOBAL              0 (ResearchState)
+              BUILD_MAP                2
+              RETURN_VALUE
+
+
+--- Function plan_research ---
+  13            RESUME                   0
+
+  14            LOAD_GLOBAL              0 (logger)
+                LOAD_ATTR                3 (info + NULL|self)
+                LOAD_CONST               0 ('Session ')
+                LOAD_FAST_BORROW         0 (state)
+                LOAD_CONST               1 ('session_id')
+                BINARY_OP               26 ([])
+                FORMAT_SIMPLE
+                LOAD_CONST               2 (': Running Planner')
+                BUILD_STRING             3
+                CALL                     1
+                POP_TOP
+
+  15            LOAD_CONST               3 ('planner')
+                LOAD_FAST_BORROW         0 (state)
+                LOAD_CONST               4 ('current_step')
+                STORE_SUBSCR
+
+  16            NOP
+
+  17    L1:     LOAD_GLOBAL              4 (settings)
+                LOAD_ATTR                6 (gemini_api_key)
+                LOAD_CONST              16 (('your_gemini_api_key_here', 'dummy'))
+                CONTAINS_OP              0 (in)
+                POP_JUMP_IF_FALSE       37 (to L3)
+                NOT_TAKEN
+
+  18            LOAD_GLOBAL              0 (logger)
+                LOAD_ATTR                9 (warning + NULL|self)
+                LOAD_CONST               5 ('No Gemini API key found, using fallback planner logic.')
+                CALL                     1
+                POP_TOP
+
+  19            LOAD_FAST_BORROW         0 (state)
+                LOAD_CONST               6 ('research_question')
+                BINARY_OP               26 ([])
+                BUILD_LIST               1
+                LOAD_FAST_BORROW         0 (state)
+                LOAD_CONST               7 ('search_queries')
+                STORE_SUBSCR
+
+  20            LOAD_FAST_BORROW         0 (state)
+        L2:     RETURN_VALUE
+
+  22    L3:     LOAD_GLOBAL             11 (ChatGoogleGenerativeAI + NULL)
+                LOAD_CONST               8 ('gemini-3.5-flash')
+                LOAD_GLOBAL              4 (settings)
+                LOAD_ATTR                6 (gemini_api_key)
+                LOAD_SMALL_INT          10
+                LOAD_CONST               9 (('model', 'google_api_key', 'max_retries'))
+                CALL_KW                  3
+                STORE_FAST               1 (llm)
+
+  23            LOAD_GLOBAL              0 (logger)
+                LOAD_ATTR                3 (info + NULL|self)
+                LOAD_CONST              10 ('LLM provider: ')
+                LOAD_FAST_BORROW         1 (llm)
+                LOAD_ATTR               12 (__class__)
+                LOAD_ATTR               14 (__name__)
+                FORMAT_SIMPLE
+                BUILD_STRING             2
+                CALL                     1
+                POP_TOP
+
+  24            LOAD_FAST_BORROW         1 (llm)
+                LOAD_ATTR               17 (with_structured_output + NULL|self)
+                LOAD_GLOBAL             18 (PlannerOutput)
+                CALL                     1
+                STORE_FAST               2 (structured_llm)
+
+  26            LOAD_CONST              11 ('Generate 3 focused search queries to research this question: ')
+                LOAD_FAST_BORROW         0 (state)
+                LOAD_CONST               6 ('research_question')
+                BINARY_OP               26 ([])
+                FORMAT_SIMPLE
+                BUILD_STRING             2
+                STORE_FAST               3 (prompt)
+
+  27            LOAD_FAST_BORROW         2 (structured_llm)
+                LOAD_ATTR               21 (invoke + NULL|self)
+                LOAD_FAST_BORROW         3 (prompt)
+                CALL                     1
+                STORE_FAST               4 (result)
+
+  29            LOAD_FAST_BORROW         4 (result)
+                LOAD_ATTR               22 (queries)
+                LOAD_FAST_BORROW         0 (state)
+                LOAD_CONST               7 ('search_queries')
+                STORE_SUBSCR
+
+  30            LOAD_GLOBAL              0 (logger)
+                LOAD_ATTR                3 (info + NULL|self)
+                LOAD_CONST               0 ('Session ')
+                LOAD_FAST_BORROW         0 (state)
+                LOAD_CONST               1 ('session_id')
+                BINARY_OP               26 ([])
+                FORMAT_SIMPLE
+                LOAD_CONST              12 (': Generated queries: ')
+                LOAD_FAST_BORROW         4 (result)
+                LOAD_ATTR               22 (queries)
+                FORMAT_SIMPLE
+                BUILD_STRING             4
+                CALL                     1
+                POP_TOP
+
+  34    L4:     LOAD_FAST_BORROW         0 (state)
+                RETURN_VALUE
+
+  --    L5:     PUSH_EXC_INFO
+
+  31            LOAD_GLOBAL             24 (Exception)
+                CHECK_EXC_MATCH
+                POP_JUMP_IF_FALSE       72 (to L9)
+                NOT_TAKEN
+                STORE_FAST               5 (e)
+
+  32    L6:     LOAD_GLOBAL              0 (logger)
+                LOAD_ATTR               27 (error + NULL|self)
+                LOAD_CONST              13 ('Planner error: ')
+                LOAD_FAST                5 (e)
+                FORMAT_SIMPLE
+                BUILD_STRING             2
+                CALL                     1
+                POP_TOP
+
+  33            LOAD_FAST                0 (state)
+                LOAD_CONST              14 ('errors')
+                BINARY_OP               26 ([])
+                LOAD_ATTR               29 (append + NULL|self)
+                LOAD_CONST              13 ('Planner error: ')
+                LOAD_GLOBAL             31 (str + NULL)
+                LOAD_FAST                5 (e)
+                CALL                     1
+                FORMAT_SIMPLE
+                BUILD_STRING             2
+                CALL                     1
+                POP_TOP
+        L7:     POP_EXCEPT
+                LOAD_CONST              15 (None)
+                STORE_FAST               5 (e)
+                DELETE_FAST              5 (e)
+
+  34            LOAD_FAST                0 (state)
+                RETURN_VALUE
+
+  --    L8:     LOAD_CONST              15 (None)
+                STORE_FAST               5 (e)
+                DELETE_FAST              5 (e)
+                RERAISE                  1
+
+  31    L9:     RERAISE                  0
+
+  --   L10:     COPY                     3
+                POP_EXCEPT
+                RERAISE                  1
+ExceptionTable:
+  L1 to L2 -> L5 [0]
+  L3 to L4 -> L5 [0]
+  L5 to L6 -> L10 [1] lasti
+  L6 to L7 -> L8 [1] lasti
+  L8 to L10 -> L10 [1] lasti

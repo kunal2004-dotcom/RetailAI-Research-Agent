@@ -1,0 +1,1118 @@
+  0           RESUME                   0
+
+  1           LOAD_SMALL_INT           0
+              LOAD_CONST               1 (None)
+              IMPORT_NAME              0 (logging)
+              STORE_NAME               0 (logging)
+
+  2           LOAD_SMALL_INT           0
+              LOAD_CONST               2 (('BaseModel', 'Field'))
+              IMPORT_NAME              1 (pydantic)
+              IMPORT_FROM              2 (BaseModel)
+              STORE_NAME               2 (BaseModel)
+              IMPORT_FROM              3 (Field)
+              STORE_NAME               3 (Field)
+              POP_TOP
+
+  3           LOAD_SMALL_INT           0
+              LOAD_CONST               3 (('ChatGoogleGenerativeAI',))
+              IMPORT_NAME              4 (langchain_google_genai)
+              IMPORT_FROM              5 (ChatGoogleGenerativeAI)
+              STORE_NAME               5 (ChatGoogleGenerativeAI)
+              POP_TOP
+
+  4           LOAD_SMALL_INT           0
+              LOAD_CONST               4 (('ResearchState',))
+              IMPORT_NAME              6 (backend.app.ai.state)
+              IMPORT_FROM              7 (ResearchState)
+              STORE_NAME               7 (ResearchState)
+              POP_TOP
+
+  5           LOAD_SMALL_INT           0
+              LOAD_CONST               5 (('settings',))
+              IMPORT_NAME              8 (backend.app.core.config)
+              IMPORT_FROM              9 (settings)
+              STORE_NAME               9 (settings)
+              POP_TOP
+
+  7           LOAD_NAME                0 (logging)
+              LOAD_ATTR               20 (getLogger)
+              PUSH_NULL
+              LOAD_NAME               11 (__name__)
+              CALL                     1
+              STORE_NAME              12 (logger)
+
+  9           LOAD_BUILD_CLASS
+              PUSH_NULL
+              LOAD_CONST               6 (<code object EvidenceExtracted at 0x0000022C5832F9F0, file "C:\Users\acer\Desktop\RetailAI-Research-Agent\backend\app\ai\nodes\evidence.py", line 9>)
+              MAKE_FUNCTION
+              LOAD_CONST               7 ('EvidenceExtracted')
+              LOAD_NAME                2 (BaseModel)
+              CALL                     3
+              STORE_NAME              13 (EvidenceExtracted)
+
+ 15           LOAD_BUILD_CLASS
+              PUSH_NULL
+              LOAD_CONST               8 (<code object EvidenceList at 0x0000022C5830B130, file "C:\Users\acer\Desktop\RetailAI-Research-Agent\backend\app\ai\nodes\evidence.py", line 15>)
+              MAKE_FUNCTION
+              LOAD_CONST               9 ('EvidenceList')
+              LOAD_NAME                2 (BaseModel)
+              CALL                     3
+              STORE_NAME              14 (EvidenceList)
+
+ 18           LOAD_CONST              10 (<code object __annotate__ at 0x0000022C5830B830, file "C:\Users\acer\Desktop\RetailAI-Research-Agent\backend\app\ai\nodes\evidence.py", line 18>)
+              MAKE_FUNCTION
+              LOAD_CONST              11 (<code object extract_evidence at 0x0000022C584B8700, file "C:\Users\acer\Desktop\RetailAI-Research-Agent\backend\app\ai\nodes\evidence.py", line 18>)
+              MAKE_FUNCTION
+              SET_FUNCTION_ATTRIBUTE  16 (annotate)
+              STORE_NAME              15 (extract_evidence)
+              LOAD_CONST               1 (None)
+              RETURN_VALUE
+
+Disassembly of <code object EvidenceExtracted at 0x0000022C5832F9F0, file "C:\Users\acer\Desktop\RetailAI-Research-Agent\backend\app\ai\nodes\evidence.py", line 9>:
+  --           MAKE_CELL                0 (__classdict__)
+
+   9           RESUME                   0
+               LOAD_NAME                0 (__name__)
+               STORE_NAME               1 (__module__)
+               LOAD_CONST               0 ('EvidenceExtracted')
+               STORE_NAME               2 (__qualname__)
+               LOAD_SMALL_INT           9
+               STORE_NAME               3 (__firstlineno__)
+               LOAD_LOCALS
+               STORE_DEREF              0 (__classdict__)
+
+  10           LOAD_NAME                4 (Field)
+               PUSH_NULL
+               LOAD_CONST               1 ('The extracted factual claim')
+               LOAD_CONST               2 (('description',))
+               CALL_KW                  1
+               STORE_NAME               5 (claim)
+
+  11           LOAD_NAME                4 (Field)
+               PUSH_NULL
+               LOAD_CONST               3 ('Exact quote or snippet supporting the claim')
+               LOAD_CONST               2 (('description',))
+               CALL_KW                  1
+               STORE_NAME               6 (supporting_text)
+
+  12           LOAD_NAME                4 (Field)
+               PUSH_NULL
+               LOAD_CONST               4 ('Relevance to research question (0.0 to 1.0)')
+               LOAD_CONST               2 (('description',))
+               CALL_KW                  1
+               STORE_NAME               7 (relevance_score)
+
+  13           LOAD_NAME                4 (Field)
+               PUSH_NULL
+               LOAD_CONST               5 ('Confidence in the fact (0.0 to 1.0)')
+               LOAD_CONST               2 (('description',))
+               CALL_KW                  1
+               STORE_NAME               8 (confidence)
+
+   9           LOAD_FAST_BORROW         0 (__classdict__)
+               BUILD_TUPLE              1
+               LOAD_CONST               6 (<code object __annotate__ at 0x0000022C58326F70, file "C:\Users\acer\Desktop\RetailAI-Research-Agent\backend\app\ai\nodes\evidence.py", line 9>)
+               MAKE_FUNCTION
+               SET_FUNCTION_ATTRIBUTE   8 (closure)
+               STORE_NAME               9 (__annotate_func__)
+               LOAD_CONST               7 (())
+               STORE_NAME              10 (__static_attributes__)
+               LOAD_FAST_BORROW         0 (__classdict__)
+               STORE_NAME              11 (__classdictcell__)
+               LOAD_CONST               8 (None)
+               RETURN_VALUE
+
+Disassembly of <code object __annotate__ at 0x0000022C58326F70, file "C:\Users\acer\Desktop\RetailAI-Research-Agent\backend\app\ai\nodes\evidence.py", line 9>:
+  --           COPY_FREE_VARS           1
+
+   9           RESUME                   0
+               LOAD_FAST_BORROW         0 (format)
+               LOAD_SMALL_INT           2
+               COMPARE_OP             132 (>)
+               POP_JUMP_IF_FALSE        3 (to L1)
+               NOT_TAKEN
+               LOAD_COMMON_CONSTANT     1 (NotImplementedError)
+               RAISE_VARARGS            1
+       L1:     BUILD_MAP                0
+
+  10           LOAD_DEREF               1 (__classdict__)
+               LOAD_FROM_DICT_OR_GLOBALS 0 (str)
+               COPY                     2
+               LOAD_CONST               1 ('claim')
+
+   9           STORE_SUBSCR
+
+  11           LOAD_DEREF               1 (__classdict__)
+               LOAD_FROM_DICT_OR_GLOBALS 0 (str)
+               COPY                     2
+               LOAD_CONST               2 ('supporting_text')
+
+   9           STORE_SUBSCR
+
+  12           LOAD_DEREF               1 (__classdict__)
+               LOAD_FROM_DICT_OR_GLOBALS 1 (float)
+               COPY                     2
+               LOAD_CONST               3 ('relevance_score')
+
+   9           STORE_SUBSCR
+
+  13           LOAD_DEREF               1 (__classdict__)
+               LOAD_FROM_DICT_OR_GLOBALS 1 (float)
+               COPY                     2
+               LOAD_CONST               4 ('confidence')
+
+   9           STORE_SUBSCR
+               RETURN_VALUE
+
+Disassembly of <code object EvidenceList at 0x0000022C5830B130, file "C:\Users\acer\Desktop\RetailAI-Research-Agent\backend\app\ai\nodes\evidence.py", line 15>:
+  --           MAKE_CELL                0 (__classdict__)
+
+  15           RESUME                   0
+               LOAD_NAME                0 (__name__)
+               STORE_NAME               1 (__module__)
+               LOAD_CONST               0 ('EvidenceList')
+               STORE_NAME               2 (__qualname__)
+               LOAD_SMALL_INT          15
+               STORE_NAME               3 (__firstlineno__)
+               LOAD_LOCALS
+               STORE_DEREF              0 (__classdict__)
+               LOAD_FAST_BORROW         0 (__classdict__)
+               BUILD_TUPLE              1
+               LOAD_CONST               1 (<code object __annotate__ at 0x0000022C586C08B0, file "C:\Users\acer\Desktop\RetailAI-Research-Agent\backend\app\ai\nodes\evidence.py", line 15>)
+               MAKE_FUNCTION
+               SET_FUNCTION_ATTRIBUTE   8 (closure)
+               STORE_NAME               4 (__annotate_func__)
+               LOAD_CONST               2 (())
+               STORE_NAME               5 (__static_attributes__)
+               LOAD_FAST_BORROW         0 (__classdict__)
+               STORE_NAME               6 (__classdictcell__)
+               LOAD_CONST               3 (None)
+               RETURN_VALUE
+
+Disassembly of <code object __annotate__ at 0x0000022C586C08B0, file "C:\Users\acer\Desktop\RetailAI-Research-Agent\backend\app\ai\nodes\evidence.py", line 15>:
+  --           COPY_FREE_VARS           1
+
+  15           RESUME                   0
+               LOAD_FAST_BORROW         0 (format)
+               LOAD_SMALL_INT           2
+               COMPARE_OP             132 (>)
+               POP_JUMP_IF_FALSE        3 (to L1)
+               NOT_TAKEN
+               LOAD_COMMON_CONSTANT     1 (NotImplementedError)
+               RAISE_VARARGS            1
+       L1:     BUILD_MAP                0
+
+  16           LOAD_DEREF               1 (__classdict__)
+               LOAD_FROM_DICT_OR_GLOBALS 0 (list)
+               LOAD_DEREF               1 (__classdict__)
+               LOAD_FROM_DICT_OR_GLOBALS 1 (EvidenceExtracted)
+               BINARY_OP               26 ([])
+               COPY                     2
+               LOAD_CONST               1 ('items')
+
+  15           STORE_SUBSCR
+               RETURN_VALUE
+
+Disassembly of <code object __annotate__ at 0x0000022C5830B830, file "C:\Users\acer\Desktop\RetailAI-Research-Agent\backend\app\ai\nodes\evidence.py", line 18>:
+ 18           RESUME                   0
+              LOAD_FAST_BORROW         0 (format)
+              LOAD_SMALL_INT           2
+              COMPARE_OP             132 (>)
+              POP_JUMP_IF_FALSE        3 (to L1)
+              NOT_TAKEN
+              LOAD_COMMON_CONSTANT     1 (NotImplementedError)
+              RAISE_VARARGS            1
+      L1:     LOAD_CONST               1 ('state')
+              LOAD_GLOBAL              0 (ResearchState)
+              LOAD_CONST               2 ('return')
+              LOAD_GLOBAL              0 (ResearchState)
+              BUILD_MAP                2
+              RETURN_VALUE
+
+Disassembly of <code object extract_evidence at 0x0000022C584B8700, file "C:\Users\acer\Desktop\RetailAI-Research-Agent\backend\app\ai\nodes\evidence.py", line 18>:
+  18            RESUME                   0
+
+  19            LOAD_GLOBAL              0 (logger)
+                LOAD_ATTR                3 (info + NULL|self)
+                LOAD_CONST               0 ('Session ')
+                LOAD_FAST_BORROW         0 (state)
+                LOAD_CONST               1 ('session_id')
+                BINARY_OP               26 ([])
+                FORMAT_SIMPLE
+                LOAD_CONST               2 (': Running Evidence Extraction')
+                BUILD_STRING             3
+                CALL                     1
+                POP_TOP
+
+  20            LOAD_CONST               3 ('evidence')
+                LOAD_FAST_BORROW         0 (state)
+                LOAD_CONST               4 ('current_step')
+                STORE_SUBSCR
+
+  22            LOAD_GLOBAL              4 (any)
+                COPY                     1
+                LOAD_COMMON_CONSTANT     4 (<built-in function any>)
+                IS_OP                    0 (is)
+                POP_JUMP_IF_FALSE       35 (to L4)
+                NOT_TAKEN
+                POP_TOP
+                LOAD_CONST               5 (<code object <genexpr> at 0x0000022C5830B330, file "C:\Users\acer\Desktop\RetailAI-Research-Agent\backend\app\ai\nodes\evidence.py", line 22>)
+                MAKE_FUNCTION
+                LOAD_FAST_BORROW         0 (state)
+                LOAD_CONST               6 ('errors')
+                BINARY_OP               26 ([])
+                GET_ITER
+                CALL                     0
+        L1:     FOR_ITER                12 (to L3)
+                TO_BOOL
+                POP_JUMP_IF_TRUE         3 (to L2)
+                NOT_TAKEN
+                JUMP_BACKWARD           11 (to L1)
+        L2:     POP_ITER
+                LOAD_CONST               7 (True)
+                JUMP_FORWARD            24 (to L5)
+        L3:     END_FOR
+                POP_ITER
+                LOAD_CONST               8 (False)
+                JUMP_FORWARD            20 (to L5)
+        L4:     PUSH_NULL
+                LOAD_CONST               5 (<code object <genexpr> at 0x0000022C5830B330, file "C:\Users\acer\Desktop\RetailAI-Research-Agent\backend\app\ai\nodes\evidence.py", line 22>)
+                MAKE_FUNCTION
+                LOAD_FAST_BORROW         0 (state)
+                LOAD_CONST               6 ('errors')
+                BINARY_OP               26 ([])
+                GET_ITER
+                CALL                     0
+                CALL                     1
+        L5:     TO_BOOL
+                POP_JUMP_IF_FALSE        3 (to L6)
+                NOT_TAKEN
+
+  23            LOAD_FAST_BORROW         0 (state)
+                RETURN_VALUE
+
+  25    L6:     BUILD_LIST               0
+                STORE_FAST               1 (evidence_items)
+
+  26            NOP
+
+  27    L7:     LOAD_GLOBAL              6 (settings)
+                LOAD_ATTR                8 (gemini_api_key)
+                LOAD_CONST              37 (('your_gemini_api_key_here', 'dummy'))
+                CONTAINS_OP              0 (in)
+                POP_JUMP_IF_FALSE      124 (to L11)
+                NOT_TAKEN
+
+  28            LOAD_GLOBAL              0 (logger)
+                LOAD_ATTR               11 (warning + NULL|self)
+                LOAD_CONST               9 ('No Gemini API key found, using fallback evidence logic.')
+                CALL                     1
+                POP_TOP
+
+  29            LOAD_FAST_BORROW         0 (state)
+                LOAD_ATTR               13 (get + NULL|self)
+                LOAD_CONST              10 ('retrieved_chunks')
+                BUILD_LIST               0
+                CALL                     2
+                GET_ITER
+        L8:     FOR_ITER                74 (to L9)
+                STORE_FAST               2 (chunk)
+
+  30            LOAD_FAST_BORROW         1 (evidence_items)
+                LOAD_ATTR               15 (append + NULL|self)
+
+  31            LOAD_CONST              11 ('temp_id')
+                LOAD_CONST              12 ('ev_')
+                LOAD_GLOBAL             17 (len + NULL)
+                LOAD_FAST_BORROW         1 (evidence_items)
+                CALL                     1
+                FORMAT_SIMPLE
+                BUILD_STRING             2
+
+  32            LOAD_CONST              13 ('source_temp_id')
+                LOAD_FAST_BORROW         2 (chunk)
+                LOAD_CONST              14 ('metadata')
+                BINARY_OP               26 ([])
+                LOAD_CONST              13 ('source_temp_id')
+                BINARY_OP               26 ([])
+
+  33            LOAD_CONST              15 ('claim')
+                LOAD_CONST              16 ('Mock claim from chunk')
+
+  34            LOAD_CONST              17 ('supporting_text')
+                LOAD_FAST_BORROW         2 (chunk)
+                LOAD_CONST              18 ('content')
+                BINARY_OP               26 ([])
+                LOAD_CONST              19 (slice(None, 50, None))
+                BINARY_OP               26 ([])
+
+  35            LOAD_CONST              20 ('relevance_score')
+                LOAD_CONST              21 (0.8)
+
+  36            LOAD_CONST              22 ('confidence')
+                LOAD_CONST              23 (0.9)
+
+  37            LOAD_CONST              24 ('evidence_type')
+                LOAD_CONST              25 ('extracted')
+
+  30            BUILD_MAP                7
+                CALL                     1
+                POP_TOP
+                JUMP_BACKWARD           76 (to L8)
+
+  29    L9:     END_FOR
+                POP_ITER
+
+  39            LOAD_FAST_BORROW_LOAD_FAST_BORROW 16 (evidence_items, state)
+                LOAD_CONST               3 ('evidence')
+                STORE_SUBSCR
+
+  40            LOAD_FAST_BORROW         0 (state)
+       L10:     RETURN_VALUE
+
+  42   L11:     LOAD_GLOBAL             19 (ChatGoogleGenerativeAI + NULL)
+                LOAD_CONST              26 ('gemini-3.5-flash')
+                LOAD_GLOBAL              6 (settings)
+                LOAD_ATTR                8 (gemini_api_key)
+                LOAD_SMALL_INT          10
+                LOAD_CONST              27 (('model', 'google_api_key', 'max_retries'))
+                CALL_KW                  3
+                STORE_FAST               3 (llm)
+
+  43            LOAD_FAST_BORROW         3 (llm)
+                LOAD_ATTR               21 (with_structured_output + NULL|self)
+                LOAD_GLOBAL             22 (EvidenceList)
+                CALL                     1
+                STORE_FAST               4 (structured_llm)
+
+  45            LOAD_FAST_BORROW         0 (state)
+                LOAD_ATTR               13 (get + NULL|self)
+                LOAD_CONST              10 ('retrieved_chunks')
+                BUILD_LIST               0
+                CALL                     2
+                GET_ITER
+       L12:     FOR_ITER               163 (to L15)
+                STORE_FAST               2 (chunk)
+
+  46            LOAD_FAST_BORROW         2 (chunk)
+                LOAD_CONST              18 ('content')
+                BINARY_OP               26 ([])
+                STORE_FAST               5 (content)
+
+  47            LOAD_FAST_BORROW         2 (chunk)
+                LOAD_CONST              14 ('metadata')
+                BINARY_OP               26 ([])
+                STORE_FAST               6 (metadata)
+
+  49            LOAD_CONST              28 ('Research Question: ')
+                LOAD_FAST_BORROW         0 (state)
+                LOAD_CONST              29 ('research_question')
+                BINARY_OP               26 ([])
+                FORMAT_SIMPLE
+                LOAD_CONST              30 ('\nSource snippet: ')
+                LOAD_FAST_BORROW         5 (content)
+                FORMAT_SIMPLE
+                LOAD_CONST              31 ('\nExtract key factual evidence.')
+                BUILD_STRING             5
+                STORE_FAST               7 (prompt)
+
+  50            LOAD_FAST_BORROW         4 (structured_llm)
+                LOAD_ATTR               25 (invoke + NULL|self)
+                LOAD_FAST_BORROW         7 (prompt)
+                CALL                     1
+                STORE_FAST               8 (result)
+
+  51            LOAD_FAST_BORROW         8 (result)
+                LOAD_ATTR               26 (items)
+                GET_ITER
+       L13:     FOR_ITER                93 (to L14)
+                STORE_FAST               9 (item)
+
+  52            LOAD_FAST_BORROW         1 (evidence_items)
+                LOAD_ATTR               15 (append + NULL|self)
+
+  53            LOAD_CONST              11 ('temp_id')
+                LOAD_CONST              12 ('ev_')
+                LOAD_GLOBAL             17 (len + NULL)
+                LOAD_FAST_BORROW         1 (evidence_items)
+                CALL                     1
+                FORMAT_SIMPLE
+                BUILD_STRING             2
+
+  54            LOAD_CONST              13 ('source_temp_id')
+                LOAD_FAST_BORROW         6 (metadata)
+                LOAD_CONST              13 ('source_temp_id')
+                BINARY_OP               26 ([])
+
+  55            LOAD_CONST              15 ('claim')
+                LOAD_FAST_BORROW         9 (item)
+                LOAD_ATTR               28 (claim)
+
+  56            LOAD_CONST              17 ('supporting_text')
+                LOAD_FAST_BORROW         9 (item)
+                LOAD_ATTR               30 (supporting_text)
+
+  57            LOAD_CONST              20 ('relevance_score')
+                LOAD_FAST_BORROW         9 (item)
+                LOAD_ATTR               32 (relevance_score)
+
+  58            LOAD_CONST              22 ('confidence')
+                LOAD_FAST_BORROW         9 (item)
+                LOAD_ATTR               34 (confidence)
+
+  59            LOAD_CONST              24 ('evidence_type')
+                LOAD_CONST              25 ('extracted')
+
+  52            BUILD_MAP                7
+                CALL                     1
+                POP_TOP
+                JUMP_BACKWARD           95 (to L13)
+
+  51   L14:     END_FOR
+                POP_ITER
+                JUMP_BACKWARD          165 (to L12)
+
+  45   L15:     END_FOR
+                POP_ITER
+
+  61            LOAD_FAST_BORROW_LOAD_FAST_BORROW 16 (evidence_items, state)
+                LOAD_CONST               3 ('evidence')
+                STORE_SUBSCR
+
+  62            LOAD_GLOBAL              0 (logger)
+                LOAD_ATTR                3 (info + NULL|self)
+                LOAD_CONST               0 ('Session ')
+                LOAD_FAST_BORROW         0 (state)
+                LOAD_CONST               1 ('session_id')
+                BINARY_OP               26 ([])
+                FORMAT_SIMPLE
+                LOAD_CONST              32 (': Extracted ')
+                LOAD_GLOBAL             17 (len + NULL)
+                LOAD_FAST_BORROW         1 (evidence_items)
+                CALL                     1
+                FORMAT_SIMPLE
+                LOAD_CONST              33 (' evidence items.')
+                BUILD_STRING             5
+                CALL                     1
+                POP_TOP
+
+  64            LOAD_FAST_BORROW         1 (evidence_items)
+                TO_BOOL
+                POP_JUMP_IF_TRUE        25 (to L16)
+                NOT_TAKEN
+
+  65            LOAD_FAST_BORROW         0 (state)
+                LOAD_CONST               6 ('errors')
+                BINARY_OP               26 ([])
+                LOAD_ATTR               15 (append + NULL|self)
+                LOAD_CONST              34 ('Insufficient evidence: Could not extract useful facts.')
+                CALL                     1
+                POP_TOP
+
+  69   L16:     LOAD_FAST_BORROW         0 (state)
+                RETURN_VALUE
+
+  --   L17:     PUSH_EXC_INFO
+
+  66            LOAD_GLOBAL             36 (Exception)
+                CHECK_EXC_MATCH
+                POP_JUMP_IF_FALSE       72 (to L21)
+                NOT_TAKEN
+                STORE_FAST              10 (e)
+
+  67   L18:     LOAD_GLOBAL              0 (logger)
+                LOAD_ATTR               39 (error + NULL|self)
+                LOAD_CONST              35 ('Evidence extraction error: ')
+                LOAD_FAST               10 (e)
+                FORMAT_SIMPLE
+                BUILD_STRING             2
+                CALL                     1
+                POP_TOP
+
+  68            LOAD_FAST                0 (state)
+                LOAD_CONST               6 ('errors')
+                BINARY_OP               26 ([])
+                LOAD_ATTR               15 (append + NULL|self)
+                LOAD_CONST              35 ('Evidence extraction error: ')
+                LOAD_GLOBAL             41 (str + NULL)
+                LOAD_FAST               10 (e)
+                CALL                     1
+                FORMAT_SIMPLE
+                BUILD_STRING             2
+                CALL                     1
+                POP_TOP
+       L19:     POP_EXCEPT
+                LOAD_CONST              36 (None)
+                STORE_FAST              10 (e)
+                DELETE_FAST             10 (e)
+
+  69            LOAD_FAST                0 (state)
+                RETURN_VALUE
+
+  --   L20:     LOAD_CONST              36 (None)
+                STORE_FAST              10 (e)
+                DELETE_FAST             10 (e)
+                RERAISE                  1
+
+  66   L21:     RERAISE                  0
+
+  --   L22:     COPY                     3
+                POP_EXCEPT
+                RERAISE                  1
+ExceptionTable:
+  L7 to L10 -> L17 [0]
+  L11 to L16 -> L17 [0]
+  L17 to L18 -> L22 [1] lasti
+  L18 to L19 -> L20 [1] lasti
+  L20 to L22 -> L22 [1] lasti
+
+Disassembly of <code object <genexpr> at 0x0000022C5830B330, file "C:\Users\acer\Desktop\RetailAI-Research-Agent\backend\app\ai\nodes\evidence.py", line 22>:
+  22           RETURN_GENERATOR
+               POP_TOP
+       L1:     RESUME                   0
+               LOAD_FAST                0 (.0)
+       L2:     FOR_ITER                10 (to L3)
+               STORE_FAST               1 (err)
+               LOAD_CONST               0 ('Insufficient evidence')
+               LOAD_FAST_BORROW         1 (err)
+               CONTAINS_OP              0 (in)
+               YIELD_VALUE              0
+               RESUME                   5
+               POP_TOP
+               JUMP_BACKWARD           12 (to L2)
+       L3:     END_FOR
+               POP_ITER
+               LOAD_CONST               1 (None)
+               RETURN_VALUE
+
+  --   L4:     CALL_INTRINSIC_1         3 (INTRINSIC_STOPITERATION_ERROR)
+               RERAISE                  1
+ExceptionTable:
+  L1 to L4 -> L4 [0] lasti
+
+
+--- Function EvidenceExtracted ---
+  --           MAKE_CELL                0 (__classdict__)
+
+   9           RESUME                   0
+               LOAD_NAME                0 (__name__)
+               STORE_NAME               1 (__module__)
+               LOAD_CONST               0 ('EvidenceExtracted')
+               STORE_NAME               2 (__qualname__)
+               LOAD_SMALL_INT           9
+               STORE_NAME               3 (__firstlineno__)
+               LOAD_LOCALS
+               STORE_DEREF              0 (__classdict__)
+
+  10           LOAD_NAME                4 (Field)
+               PUSH_NULL
+               LOAD_CONST               1 ('The extracted factual claim')
+               LOAD_CONST               2 (('description',))
+               CALL_KW                  1
+               STORE_NAME               5 (claim)
+
+  11           LOAD_NAME                4 (Field)
+               PUSH_NULL
+               LOAD_CONST               3 ('Exact quote or snippet supporting the claim')
+               LOAD_CONST               2 (('description',))
+               CALL_KW                  1
+               STORE_NAME               6 (supporting_text)
+
+  12           LOAD_NAME                4 (Field)
+               PUSH_NULL
+               LOAD_CONST               4 ('Relevance to research question (0.0 to 1.0)')
+               LOAD_CONST               2 (('description',))
+               CALL_KW                  1
+               STORE_NAME               7 (relevance_score)
+
+  13           LOAD_NAME                4 (Field)
+               PUSH_NULL
+               LOAD_CONST               5 ('Confidence in the fact (0.0 to 1.0)')
+               LOAD_CONST               2 (('description',))
+               CALL_KW                  1
+               STORE_NAME               8 (confidence)
+
+   9           LOAD_FAST_BORROW         0 (__classdict__)
+               BUILD_TUPLE              1
+               LOAD_CONST               6 (<code object __annotate__ at 0x0000022C58326F70, file "C:\Users\acer\Desktop\RetailAI-Research-Agent\backend\app\ai\nodes\evidence.py", line 9>)
+               MAKE_FUNCTION
+               SET_FUNCTION_ATTRIBUTE   8 (closure)
+               STORE_NAME               9 (__annotate_func__)
+               LOAD_CONST               7 (())
+               STORE_NAME              10 (__static_attributes__)
+               LOAD_FAST_BORROW         0 (__classdict__)
+               STORE_NAME              11 (__classdictcell__)
+               LOAD_CONST               8 (None)
+               RETURN_VALUE
+
+Disassembly of <code object __annotate__ at 0x0000022C58326F70, file "C:\Users\acer\Desktop\RetailAI-Research-Agent\backend\app\ai\nodes\evidence.py", line 9>:
+  --           COPY_FREE_VARS           1
+
+   9           RESUME                   0
+               LOAD_FAST_BORROW         0 (format)
+               LOAD_SMALL_INT           2
+               COMPARE_OP             132 (>)
+               POP_JUMP_IF_FALSE        3 (to L1)
+               NOT_TAKEN
+               LOAD_COMMON_CONSTANT     1 (NotImplementedError)
+               RAISE_VARARGS            1
+       L1:     BUILD_MAP                0
+
+  10           LOAD_DEREF               1 (__classdict__)
+               LOAD_FROM_DICT_OR_GLOBALS 0 (str)
+               COPY                     2
+               LOAD_CONST               1 ('claim')
+
+   9           STORE_SUBSCR
+
+  11           LOAD_DEREF               1 (__classdict__)
+               LOAD_FROM_DICT_OR_GLOBALS 0 (str)
+               COPY                     2
+               LOAD_CONST               2 ('supporting_text')
+
+   9           STORE_SUBSCR
+
+  12           LOAD_DEREF               1 (__classdict__)
+               LOAD_FROM_DICT_OR_GLOBALS 1 (float)
+               COPY                     2
+               LOAD_CONST               3 ('relevance_score')
+
+   9           STORE_SUBSCR
+
+  13           LOAD_DEREF               1 (__classdict__)
+               LOAD_FROM_DICT_OR_GLOBALS 1 (float)
+               COPY                     2
+               LOAD_CONST               4 ('confidence')
+
+   9           STORE_SUBSCR
+               RETURN_VALUE
+
+
+--- Function EvidenceList ---
+  --           MAKE_CELL                0 (__classdict__)
+
+  15           RESUME                   0
+               LOAD_NAME                0 (__name__)
+               STORE_NAME               1 (__module__)
+               LOAD_CONST               0 ('EvidenceList')
+               STORE_NAME               2 (__qualname__)
+               LOAD_SMALL_INT          15
+               STORE_NAME               3 (__firstlineno__)
+               LOAD_LOCALS
+               STORE_DEREF              0 (__classdict__)
+               LOAD_FAST_BORROW         0 (__classdict__)
+               BUILD_TUPLE              1
+               LOAD_CONST               1 (<code object __annotate__ at 0x0000022C586C08B0, file "C:\Users\acer\Desktop\RetailAI-Research-Agent\backend\app\ai\nodes\evidence.py", line 15>)
+               MAKE_FUNCTION
+               SET_FUNCTION_ATTRIBUTE   8 (closure)
+               STORE_NAME               4 (__annotate_func__)
+               LOAD_CONST               2 (())
+               STORE_NAME               5 (__static_attributes__)
+               LOAD_FAST_BORROW         0 (__classdict__)
+               STORE_NAME               6 (__classdictcell__)
+               LOAD_CONST               3 (None)
+               RETURN_VALUE
+
+Disassembly of <code object __annotate__ at 0x0000022C586C08B0, file "C:\Users\acer\Desktop\RetailAI-Research-Agent\backend\app\ai\nodes\evidence.py", line 15>:
+  --           COPY_FREE_VARS           1
+
+  15           RESUME                   0
+               LOAD_FAST_BORROW         0 (format)
+               LOAD_SMALL_INT           2
+               COMPARE_OP             132 (>)
+               POP_JUMP_IF_FALSE        3 (to L1)
+               NOT_TAKEN
+               LOAD_COMMON_CONSTANT     1 (NotImplementedError)
+               RAISE_VARARGS            1
+       L1:     BUILD_MAP                0
+
+  16           LOAD_DEREF               1 (__classdict__)
+               LOAD_FROM_DICT_OR_GLOBALS 0 (list)
+               LOAD_DEREF               1 (__classdict__)
+               LOAD_FROM_DICT_OR_GLOBALS 1 (EvidenceExtracted)
+               BINARY_OP               26 ([])
+               COPY                     2
+               LOAD_CONST               1 ('items')
+
+  15           STORE_SUBSCR
+               RETURN_VALUE
+
+
+--- Function __annotate__ ---
+ 18           RESUME                   0
+              LOAD_FAST_BORROW         0 (format)
+              LOAD_SMALL_INT           2
+              COMPARE_OP             132 (>)
+              POP_JUMP_IF_FALSE        3 (to L1)
+              NOT_TAKEN
+              LOAD_COMMON_CONSTANT     1 (NotImplementedError)
+              RAISE_VARARGS            1
+      L1:     LOAD_CONST               1 ('state')
+              LOAD_GLOBAL              0 (ResearchState)
+              LOAD_CONST               2 ('return')
+              LOAD_GLOBAL              0 (ResearchState)
+              BUILD_MAP                2
+              RETURN_VALUE
+
+
+--- Function extract_evidence ---
+  18            RESUME                   0
+
+  19            LOAD_GLOBAL              0 (logger)
+                LOAD_ATTR                3 (info + NULL|self)
+                LOAD_CONST               0 ('Session ')
+                LOAD_FAST_BORROW         0 (state)
+                LOAD_CONST               1 ('session_id')
+                BINARY_OP               26 ([])
+                FORMAT_SIMPLE
+                LOAD_CONST               2 (': Running Evidence Extraction')
+                BUILD_STRING             3
+                CALL                     1
+                POP_TOP
+
+  20            LOAD_CONST               3 ('evidence')
+                LOAD_FAST_BORROW         0 (state)
+                LOAD_CONST               4 ('current_step')
+                STORE_SUBSCR
+
+  22            LOAD_GLOBAL              4 (any)
+                COPY                     1
+                LOAD_COMMON_CONSTANT     4 (<built-in function any>)
+                IS_OP                    0 (is)
+                POP_JUMP_IF_FALSE       35 (to L4)
+                NOT_TAKEN
+                POP_TOP
+                LOAD_CONST               5 (<code object <genexpr> at 0x0000022C5830B330, file "C:\Users\acer\Desktop\RetailAI-Research-Agent\backend\app\ai\nodes\evidence.py", line 22>)
+                MAKE_FUNCTION
+                LOAD_FAST_BORROW         0 (state)
+                LOAD_CONST               6 ('errors')
+                BINARY_OP               26 ([])
+                GET_ITER
+                CALL                     0
+        L1:     FOR_ITER                12 (to L3)
+                TO_BOOL
+                POP_JUMP_IF_TRUE         3 (to L2)
+                NOT_TAKEN
+                JUMP_BACKWARD           11 (to L1)
+        L2:     POP_ITER
+                LOAD_CONST               7 (True)
+                JUMP_FORWARD            24 (to L5)
+        L3:     END_FOR
+                POP_ITER
+                LOAD_CONST               8 (False)
+                JUMP_FORWARD            20 (to L5)
+        L4:     PUSH_NULL
+                LOAD_CONST               5 (<code object <genexpr> at 0x0000022C5830B330, file "C:\Users\acer\Desktop\RetailAI-Research-Agent\backend\app\ai\nodes\evidence.py", line 22>)
+                MAKE_FUNCTION
+                LOAD_FAST_BORROW         0 (state)
+                LOAD_CONST               6 ('errors')
+                BINARY_OP               26 ([])
+                GET_ITER
+                CALL                     0
+                CALL                     1
+        L5:     TO_BOOL
+                POP_JUMP_IF_FALSE        3 (to L6)
+                NOT_TAKEN
+
+  23            LOAD_FAST_BORROW         0 (state)
+                RETURN_VALUE
+
+  25    L6:     BUILD_LIST               0
+                STORE_FAST               1 (evidence_items)
+
+  26            NOP
+
+  27    L7:     LOAD_GLOBAL              6 (settings)
+                LOAD_ATTR                8 (gemini_api_key)
+                LOAD_CONST              37 (('your_gemini_api_key_here', 'dummy'))
+                CONTAINS_OP              0 (in)
+                POP_JUMP_IF_FALSE      124 (to L11)
+                NOT_TAKEN
+
+  28            LOAD_GLOBAL              0 (logger)
+                LOAD_ATTR               11 (warning + NULL|self)
+                LOAD_CONST               9 ('No Gemini API key found, using fallback evidence logic.')
+                CALL                     1
+                POP_TOP
+
+  29            LOAD_FAST_BORROW         0 (state)
+                LOAD_ATTR               13 (get + NULL|self)
+                LOAD_CONST              10 ('retrieved_chunks')
+                BUILD_LIST               0
+                CALL                     2
+                GET_ITER
+        L8:     FOR_ITER                74 (to L9)
+                STORE_FAST               2 (chunk)
+
+  30            LOAD_FAST_BORROW         1 (evidence_items)
+                LOAD_ATTR               15 (append + NULL|self)
+
+  31            LOAD_CONST              11 ('temp_id')
+                LOAD_CONST              12 ('ev_')
+                LOAD_GLOBAL             17 (len + NULL)
+                LOAD_FAST_BORROW         1 (evidence_items)
+                CALL                     1
+                FORMAT_SIMPLE
+                BUILD_STRING             2
+
+  32            LOAD_CONST              13 ('source_temp_id')
+                LOAD_FAST_BORROW         2 (chunk)
+                LOAD_CONST              14 ('metadata')
+                BINARY_OP               26 ([])
+                LOAD_CONST              13 ('source_temp_id')
+                BINARY_OP               26 ([])
+
+  33            LOAD_CONST              15 ('claim')
+                LOAD_CONST              16 ('Mock claim from chunk')
+
+  34            LOAD_CONST              17 ('supporting_text')
+                LOAD_FAST_BORROW         2 (chunk)
+                LOAD_CONST              18 ('content')
+                BINARY_OP               26 ([])
+                LOAD_CONST              19 (slice(None, 50, None))
+                BINARY_OP               26 ([])
+
+  35            LOAD_CONST              20 ('relevance_score')
+                LOAD_CONST              21 (0.8)
+
+  36            LOAD_CONST              22 ('confidence')
+                LOAD_CONST              23 (0.9)
+
+  37            LOAD_CONST              24 ('evidence_type')
+                LOAD_CONST              25 ('extracted')
+
+  30            BUILD_MAP                7
+                CALL                     1
+                POP_TOP
+                JUMP_BACKWARD           76 (to L8)
+
+  29    L9:     END_FOR
+                POP_ITER
+
+  39            LOAD_FAST_BORROW_LOAD_FAST_BORROW 16 (evidence_items, state)
+                LOAD_CONST               3 ('evidence')
+                STORE_SUBSCR
+
+  40            LOAD_FAST_BORROW         0 (state)
+       L10:     RETURN_VALUE
+
+  42   L11:     LOAD_GLOBAL             19 (ChatGoogleGenerativeAI + NULL)
+                LOAD_CONST              26 ('gemini-3.5-flash')
+                LOAD_GLOBAL              6 (settings)
+                LOAD_ATTR                8 (gemini_api_key)
+                LOAD_SMALL_INT          10
+                LOAD_CONST              27 (('model', 'google_api_key', 'max_retries'))
+                CALL_KW                  3
+                STORE_FAST               3 (llm)
+
+  43            LOAD_FAST_BORROW         3 (llm)
+                LOAD_ATTR               21 (with_structured_output + NULL|self)
+                LOAD_GLOBAL             22 (EvidenceList)
+                CALL                     1
+                STORE_FAST               4 (structured_llm)
+
+  45            LOAD_FAST_BORROW         0 (state)
+                LOAD_ATTR               13 (get + NULL|self)
+                LOAD_CONST              10 ('retrieved_chunks')
+                BUILD_LIST               0
+                CALL                     2
+                GET_ITER
+       L12:     FOR_ITER               163 (to L15)
+                STORE_FAST               2 (chunk)
+
+  46            LOAD_FAST_BORROW         2 (chunk)
+                LOAD_CONST              18 ('content')
+                BINARY_OP               26 ([])
+                STORE_FAST               5 (content)
+
+  47            LOAD_FAST_BORROW         2 (chunk)
+                LOAD_CONST              14 ('metadata')
+                BINARY_OP               26 ([])
+                STORE_FAST               6 (metadata)
+
+  49            LOAD_CONST              28 ('Research Question: ')
+                LOAD_FAST_BORROW         0 (state)
+                LOAD_CONST              29 ('research_question')
+                BINARY_OP               26 ([])
+                FORMAT_SIMPLE
+                LOAD_CONST              30 ('\nSource snippet: ')
+                LOAD_FAST_BORROW         5 (content)
+                FORMAT_SIMPLE
+                LOAD_CONST              31 ('\nExtract key factual evidence.')
+                BUILD_STRING             5
+                STORE_FAST               7 (prompt)
+
+  50            LOAD_FAST_BORROW         4 (structured_llm)
+                LOAD_ATTR               25 (invoke + NULL|self)
+                LOAD_FAST_BORROW         7 (prompt)
+                CALL                     1
+                STORE_FAST               8 (result)
+
+  51            LOAD_FAST_BORROW         8 (result)
+                LOAD_ATTR               26 (items)
+                GET_ITER
+       L13:     FOR_ITER                93 (to L14)
+                STORE_FAST               9 (item)
+
+  52            LOAD_FAST_BORROW         1 (evidence_items)
+                LOAD_ATTR               15 (append + NULL|self)
+
+  53            LOAD_CONST              11 ('temp_id')
+                LOAD_CONST              12 ('ev_')
+                LOAD_GLOBAL             17 (len + NULL)
+                LOAD_FAST_BORROW         1 (evidence_items)
+                CALL                     1
+                FORMAT_SIMPLE
+                BUILD_STRING             2
+
+  54            LOAD_CONST              13 ('source_temp_id')
+                LOAD_FAST_BORROW         6 (metadata)
+                LOAD_CONST              13 ('source_temp_id')
+                BINARY_OP               26 ([])
+
+  55            LOAD_CONST              15 ('claim')
+                LOAD_FAST_BORROW         9 (item)
+                LOAD_ATTR               28 (claim)
+
+  56            LOAD_CONST              17 ('supporting_text')
+                LOAD_FAST_BORROW         9 (item)
+                LOAD_ATTR               30 (supporting_text)
+
+  57            LOAD_CONST              20 ('relevance_score')
+                LOAD_FAST_BORROW         9 (item)
+                LOAD_ATTR               32 (relevance_score)
+
+  58            LOAD_CONST              22 ('confidence')
+                LOAD_FAST_BORROW         9 (item)
+                LOAD_ATTR               34 (confidence)
+
+  59            LOAD_CONST              24 ('evidence_type')
+                LOAD_CONST              25 ('extracted')
+
+  52            BUILD_MAP                7
+                CALL                     1
+                POP_TOP
+                JUMP_BACKWARD           95 (to L13)
+
+  51   L14:     END_FOR
+                POP_ITER
+                JUMP_BACKWARD          165 (to L12)
+
+  45   L15:     END_FOR
+                POP_ITER
+
+  61            LOAD_FAST_BORROW_LOAD_FAST_BORROW 16 (evidence_items, state)
+                LOAD_CONST               3 ('evidence')
+                STORE_SUBSCR
+
+  62            LOAD_GLOBAL              0 (logger)
+                LOAD_ATTR                3 (info + NULL|self)
+                LOAD_CONST               0 ('Session ')
+                LOAD_FAST_BORROW         0 (state)
+                LOAD_CONST               1 ('session_id')
+                BINARY_OP               26 ([])
+                FORMAT_SIMPLE
+                LOAD_CONST              32 (': Extracted ')
+                LOAD_GLOBAL             17 (len + NULL)
+                LOAD_FAST_BORROW         1 (evidence_items)
+                CALL                     1
+                FORMAT_SIMPLE
+                LOAD_CONST              33 (' evidence items.')
+                BUILD_STRING             5
+                CALL                     1
+                POP_TOP
+
+  64            LOAD_FAST_BORROW         1 (evidence_items)
+                TO_BOOL
+                POP_JUMP_IF_TRUE        25 (to L16)
+                NOT_TAKEN
+
+  65            LOAD_FAST_BORROW         0 (state)
+                LOAD_CONST               6 ('errors')
+                BINARY_OP               26 ([])
+                LOAD_ATTR               15 (append + NULL|self)
+                LOAD_CONST              34 ('Insufficient evidence: Could not extract useful facts.')
+                CALL                     1
+                POP_TOP
+
+  69   L16:     LOAD_FAST_BORROW         0 (state)
+                RETURN_VALUE
+
+  --   L17:     PUSH_EXC_INFO
+
+  66            LOAD_GLOBAL             36 (Exception)
+                CHECK_EXC_MATCH
+                POP_JUMP_IF_FALSE       72 (to L21)
+                NOT_TAKEN
+                STORE_FAST              10 (e)
+
+  67   L18:     LOAD_GLOBAL              0 (logger)
+                LOAD_ATTR               39 (error + NULL|self)
+                LOAD_CONST              35 ('Evidence extraction error: ')
+                LOAD_FAST               10 (e)
+                FORMAT_SIMPLE
+                BUILD_STRING             2
+                CALL                     1
+                POP_TOP
+
+  68            LOAD_FAST                0 (state)
+                LOAD_CONST               6 ('errors')
+                BINARY_OP               26 ([])
+                LOAD_ATTR               15 (append + NULL|self)
+                LOAD_CONST              35 ('Evidence extraction error: ')
+                LOAD_GLOBAL             41 (str + NULL)
+                LOAD_FAST               10 (e)
+                CALL                     1
+                FORMAT_SIMPLE
+                BUILD_STRING             2
+                CALL                     1
+                POP_TOP
+       L19:     POP_EXCEPT
+                LOAD_CONST              36 (None)
+                STORE_FAST              10 (e)
+                DELETE_FAST             10 (e)
+
+  69            LOAD_FAST                0 (state)
+                RETURN_VALUE
+
+  --   L20:     LOAD_CONST              36 (None)
+                STORE_FAST              10 (e)
+                DELETE_FAST             10 (e)
+                RERAISE                  1
+
+  66   L21:     RERAISE                  0
+
+  --   L22:     COPY                     3
+                POP_EXCEPT
+                RERAISE                  1
+ExceptionTable:
+  L7 to L10 -> L17 [0]
+  L11 to L16 -> L17 [0]
+  L17 to L18 -> L22 [1] lasti
+  L18 to L19 -> L20 [1] lasti
+  L20 to L22 -> L22 [1] lasti
+
+Disassembly of <code object <genexpr> at 0x0000022C5830B330, file "C:\Users\acer\Desktop\RetailAI-Research-Agent\backend\app\ai\nodes\evidence.py", line 22>:
+  22           RETURN_GENERATOR
+               POP_TOP
+       L1:     RESUME                   0
+               LOAD_FAST                0 (.0)
+       L2:     FOR_ITER                10 (to L3)
+               STORE_FAST               1 (err)
+               LOAD_CONST               0 ('Insufficient evidence')
+               LOAD_FAST_BORROW         1 (err)
+               CONTAINS_OP              0 (in)
+               YIELD_VALUE              0
+               RESUME                   5
+               POP_TOP
+               JUMP_BACKWARD           12 (to L2)
+       L3:     END_FOR
+               POP_ITER
+               LOAD_CONST               1 (None)
+               RETURN_VALUE
+
+  --   L4:     CALL_INTRINSIC_1         3 (INTRINSIC_STOPITERATION_ERROR)
+               RERAISE                  1
+ExceptionTable:
+  L1 to L4 -> L4 [0] lasti
