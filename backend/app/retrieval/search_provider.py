@@ -39,7 +39,19 @@ class DDGSearchProvider:
             try:
                 import wikipedia
                 wikipedia.set_lang("en")
+                
+                # Try the original query
                 search_results = wikipedia.search(query, results=2)
+                
+                # If Wikipedia finds nothing (because the LLM query is too specific), try simpler terms
+                if not search_results:
+                    words = query.split()
+                    if len(words) > 2:
+                        simplified = " ".join(words[:2])
+                        search_results = wikipedia.search(simplified, results=2)
+                    if not search_results:
+                        search_results = wikipedia.search("Artificial Intelligence Retail", results=2)
+
                 formatted_results = []
                 for title in search_results:
                     try:
