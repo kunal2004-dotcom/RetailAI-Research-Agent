@@ -27,11 +27,37 @@ class DDGSearchProvider:
                         "url": r.get("link", ""),
                         "content": r.get("snippet", "")
                     })
+            
+            # Fallback to wikipedia if duckduckgo fails or returns 0 results
+            if not formatted_results:
+                raise Exception("DDG returned 0 results, falling back to Wikipedia")
+                
             return formatted_results
         except Exception as e:
             import logging
-            logging.getLogger(__name__).warning(f"DDG Search failed: {e}")
-            return []
+            logging.getLogger(__name__).warning(f"DDG Search failed: {e}. Trying Wikipedia.")
+            try:
+                import wikipedia
+                wikipedia.set_lang("en")
+                search_results = wikipedia.search(query, results=2)
+                formatted_results = []
+                for title in search_results:
+                    try:
+                        page = wikipedia.page(title, auto_suggest=False)
+                        formatted_results.append({
+                            "title": page.title,
+                            "url": page.url,
+                            "content": page.summary[:1000]
+                        })
+                    except Exception:
+                        pass
+                return formatted_results
+            except ImportError:
+                logging.getLogger(__name__).warning("wikipedia package not installed.")
+                return []
+            except Exception as we:
+                logging.getLogger(__name__).warning(f"Wikipedia search also failed: {we}")
+                return []
 
 def get_search_provider() -> SearchProvider:
     if settings.gemini_api_key not in ["your_gemini_api_key_here", "dummy"]:

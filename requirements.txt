@@ -3,7 +3,6 @@ fastapi>=0.111.0
 uvicorn[standard]>=0.30.1
 pydantic>=2.7.1
 pydantic-settings>=2.2.1
-
 # AI and Graph
 langchain>=0.2.0
 langchain-core>=0.2.0
@@ -11,16 +10,14 @@ langchain-community>=0.2.0
 langgraph>=0.0.60
 langchain-openai>=0.1.7 # Default LLM provider for now, abstractable
 langchain-google-genai>=4.3.7
-
 # Retrieval and DB
 chromadb>=0.5.0
 sqlalchemy>=2.0.30
 alembic>=1.13.1
-
 # Frontend
 streamlit>=1.35.0
 requests>=2.32.0
-
 # Misc / Utils
 python-dotenv>=1.0.1
 duckduckgo-search>=6.4.2
+wikipedia
