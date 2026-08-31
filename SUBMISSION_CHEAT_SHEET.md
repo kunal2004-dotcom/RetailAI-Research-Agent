@@ -17,13 +17,66 @@ The `README.md` file in the root directory contains the setup instructions. Make
 *(You can draw a quick flowchart in draw.io or Excalidraw representing the above points if they require an image file).*
 
 ## 4. Database / Data Model
-**Relational Model (SQLite):**
-- **ResearchSession:** Stores `id`, `research_question`, `status` (running/completed/failed), `error_message`, `created_at`, `completed_at`.
-- **Source:** Stores `id`, `session_id`, `url`, `title`, `snippet`, `content`, `retrieved_at`.
-- **EvidenceItem:** Stores `id`, `session_id`, `source_id`, `claim`, `evidence_type`, `relevance_score`.
-- **Finding:** Stores `id`, `session_id`, `statement`, `confidence`.
-- **FindingEvidence:** Join table linking `Finding` and `EvidenceItem` with `relationship_type`.
-- **Recommendation:** Stores `id`, `session_id`, `recommendation`, `rationale`, `confidence`.
+
+**Entity Relationship Diagram (ERD):**
+```mermaid
+erDiagram
+    ResearchSession ||--o{ Source : "has"
+    ResearchSession ||--o{ EvidenceItem : "has"
+    ResearchSession ||--o{ Finding : "has"
+    ResearchSession ||--o{ Recommendation : "has"
+
+    Source ||--o{ EvidenceItem : "provides"
+    
+    EvidenceItem ||--o{ FindingEvidence : "supports"
+    Finding ||--o{ FindingEvidence : "supported by"
+
+    ResearchSession {
+        string id PK
+        string research_question
+        string status
+        string error_message
+        datetime created_at
+        datetime completed_at
+    }
+    
+    Source {
+        string id PK
+        string session_id FK
+        string url
+        string title
+        text content
+        datetime retrieved_at
+    }
+
+    EvidenceItem {
+        string id PK
+        string session_id FK
+        string source_id FK
+        text claim
+        float relevance_score
+    }
+
+    Finding {
+        string id PK
+        string session_id FK
+        text statement
+        float confidence
+    }
+
+    FindingEvidence {
+        string finding_id FK
+        string evidence_id FK
+        string relationship_type
+    }
+
+    Recommendation {
+        string id PK
+        string session_id FK
+        text recommendation
+        float confidence
+    }
+```
 
 **Vector Model (ChromaDB):**
 - Collection: `retail_research`
