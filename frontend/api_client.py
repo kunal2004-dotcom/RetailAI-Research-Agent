@@ -24,7 +24,7 @@ class APIClient:
             response = httpx.post(
                 f"{self.base_url}/api/research",
                 json={"question": question},
-                timeout=10.0
+                timeout=60.0
             )
             response.raise_for_status()
             return response.json()
@@ -37,7 +37,7 @@ class APIClient:
 
     def get_research_session(self, session_id: int) -> Dict[str, Any]:
         try:
-            response = httpx.get(f"{self.base_url}/api/research/{session_id}", timeout=10.0)
+            response = httpx.get(f"{self.base_url}/api/research/{session_id}", timeout=60.0)
             response.raise_for_status()
             return response.json()
         except httpx.HTTPStatusError as e:
@@ -52,7 +52,7 @@ class APIClient:
             response = httpx.get(
                 f"{self.base_url}/api/research",
                 params={"skip": skip, "limit": limit},
-                timeout=10.0
+                timeout=60.0
             )
             response.raise_for_status()
             return response.json()
@@ -62,7 +62,7 @@ class APIClient:
 
     def delete_session(self, session_id: int) -> bool:
         try:
-            response = httpx.delete(f"{self.base_url}/api/research/{session_id}", timeout=10.0)
+            response = httpx.delete(f"{self.base_url}/api/research/{session_id}", timeout=60.0)
             response.raise_for_status()
             return True
         except Exception as e:
