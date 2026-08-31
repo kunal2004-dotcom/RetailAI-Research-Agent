@@ -149,7 +149,8 @@ if st.session_state.current_session_id:
                 evidence = {e["id"]: e for e in session_data.get("evidence", [])}
                 
                 for src_id, src in sources.items():
-                    with st.expander(f"📄 Source: {src.get('title', 'Untitled')} - {src.get('url', 'No URL')}"):
+                    with st.expander(f"📄 Source: {src.get('title', 'Untitled')}"):
+                        st.markdown(f"**URL:** [{src.get('url', 'No URL')}]({src.get('url', '#')})")
                         st.markdown(f"**Publisher:** {src.get('publisher')}")
                         # Find evidence for this source
                         src_evidence = [e for e in evidence.values() if e.get("source_id") == src_id]
@@ -160,4 +161,4 @@ if st.session_state.current_session_id:
                                 if ev.get("relevance_score"):
                                     st.caption(f"Relevance: {ev.get('relevance_score')}")
                         else:
-                            st.write("No direct evidence extracted from this source.")
+                            st.info("The AI reviewed this source but did not extract any highly relevant evidence to answer your specific question. It was filtered out as noise.")
