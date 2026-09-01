@@ -64,6 +64,8 @@ The foundation is laid out. The next phase will involve setting up the core conf
 
 The database schema is designed to preserve traceability from research questions down to final recommendations:
 
+![Entity Relationship Diagram](docs/images/er_diagram.png)
+
 - **Organization**: Top-level entity representing a company or client.
 - **ResearchSession**: A single research job or question.
 - **Source**: External sources (articles, sites, APIs) retrieved during the session. (Enforces unique URL per session).
