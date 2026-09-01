@@ -20,7 +20,7 @@ def plan_research(state: ResearchState) -> ResearchState:
         state['search_queries'] = [state['research_question']]
         return state
         
-    llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash", google_api_key=settings.gemini_api_key, max_retries=0)
+    llm = ChatGoogleGenerativeAI(model="gemini-3.6-flash", google_api_key=settings.gemini_api_key, max_retries=0)
     logger.info(f"LLM provider: {llm.__class__.__name__}")
     structured_llm = llm.with_structured_output(PlannerOutput)
     

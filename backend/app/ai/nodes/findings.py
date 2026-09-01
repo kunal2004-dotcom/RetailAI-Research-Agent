@@ -38,7 +38,7 @@ def generate_findings(state: ResearchState) -> ResearchState:
         }]
         return state
         
-    llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash", google_api_key=settings.gemini_api_key, max_retries=0)
+    llm = ChatGoogleGenerativeAI(model="gemini-3.6-flash", google_api_key=settings.gemini_api_key, max_retries=0)
     structured_llm = llm.with_structured_output(FindingsList)
     
     evidence_text = "\n".join([f"ID: {e['temp_id']} | Claim: {e['claim']}" for e in state['evidence']])
