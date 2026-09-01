@@ -57,7 +57,7 @@ def extract_evidence(state: ResearchState) -> ResearchState:
             logger.info(f"Session {state['session_id']}: Extracting evidence in a single batched LLM call...")
             result = structured_llm.invoke(prompt)
             for item in result.items:
-                if item.relevance_score > 0.6:
+                if item.relevance_score > 0.0:
                     evidence_items.append({
                         "temp_id": str(uuid.uuid4()),
                         "source_temp_id": item.source_id if item.source_id != 'unknown' else None,
