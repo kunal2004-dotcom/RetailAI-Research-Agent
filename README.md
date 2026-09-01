@@ -64,7 +64,59 @@ The foundation is laid out. The next phase will involve setting up the core conf
 
 The database schema is designed to preserve traceability from research questions down to final recommendations:
 
-![Entity Relationship Diagram](docs/images/er_diagram.png)
+```mermaid
+erDiagram
+  RESEARCHSESSION ||--o{ SOURCE : has
+  RESEARCHSESSION ||--o{ EVIDENCEITEM : has
+  RESEARCHSESSION ||--o{ FINDING : has
+  RESEARCHSESSION ||--o{ RECOMMENDATION : has
+  SOURCE ||--o{ EVIDENCEITEM : supports
+  FINDING ||--o{ FINDINGEVIDENCE : links
+  EVIDENCEITEM ||--o{ FINDINGEVIDENCE : links
+  RESEARCHSESSION {
+    string id PK
+    string research_question
+    string status
+    string error_message
+    datetime created_at
+    datetime completed_at
+  }
+  SOURCE {
+    string id PK
+    string session_id FK
+    string url
+    string title
+    string snippet
+    string content
+    datetime retrieved_at
+  }
+  EVIDENCEITEM {
+    string id PK
+    string session_id FK
+    string source_id FK
+    string claim
+    string evidence_type
+    float relevance_score
+  }
+  FINDING {
+    string id PK
+    string session_id FK
+    string statement
+    float confidence
+  }
+  FINDINGEVIDENCE {
+    string finding_id FK
+    string evidence_id FK
+    string relationship_type
+  }
+  RECOMMENDATION {
+    string id PK
+    string session_id FK
+    string recommendation
+    string rationale
+    float confidence
+  }
+```
 
 - **Organization**: Top-level entity representing a company or client.
 - **ResearchSession**: A single research job or question.
