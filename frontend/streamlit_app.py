@@ -95,8 +95,12 @@ if st.session_state.current_session_id:
         try:
             session_data = api_client.get_research_session(session_id)
         except Exception as e:
-            st.error(str(e))
-            break
+            # If backend is temporarily unavailable (e.g. 502), just wait and try again
+            with poll_placeholder.container():
+                st.warning("Backend is waking up or temporarily unavailable. Retrying...")
+            time.sleep(5)
+            retry_count += 1
+            continue
             
         status = session_data.get("status")
         

@@ -69,7 +69,8 @@ class APIClient:
 
     def get_research_session(self, session_id: int) -> Dict[str, Any]:
         try:
-            response = self._request_with_retry("GET", f"{self.base_url}/api/research/{session_id}", timeout=30.0)
+            response = httpx.get(f"{self.base_url}/api/research/{session_id}", timeout=10.0)
+            response.raise_for_status()
             return response.json()
         except httpx.HTTPStatusError as e:
             logger.error(f"HTTP error occurred: {e}")
@@ -80,12 +81,12 @@ class APIClient:
 
     def get_research_sessions(self, skip: int = 0, limit: int = 20) -> List[Dict[str, Any]]:
         try:
-            response = self._request_with_retry(
-                "GET",
+            response = httpx.get(
                 f"{self.base_url}/api/research",
                 params={"skip": skip, "limit": limit},
-                timeout=30.0
+                timeout=5.0
             )
+            response.raise_for_status()
             return response.json()
         except Exception as e:
             logger.error(f"Error fetching sessions list: {e}")
