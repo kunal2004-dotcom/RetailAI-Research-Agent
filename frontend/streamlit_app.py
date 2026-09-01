@@ -86,7 +86,7 @@ if st.session_state.current_session_id:
     
     # Poll for status if not completed
     poll_placeholder = st.empty()
-    max_retries = 60 # e.g., 60 seconds
+    max_retries = 450 # 15 minutes (at 2 seconds per retry)
     retry_count = 0
     
     session_data = None
@@ -166,3 +166,5 @@ if st.session_state.current_session_id:
                                     st.caption(f"Relevance: {ev.get('relevance_score')}")
                         else:
                             st.info("The AI reviewed this source but did not extract any highly relevant evidence to answer your specific question. It was filtered out as noise.")
+        elif status in ["pending", "running"]:
+            st.warning("The research is taking longer than expected. It is still running in the background. Please check back in a few minutes.")
