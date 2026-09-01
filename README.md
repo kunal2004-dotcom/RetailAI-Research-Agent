@@ -4,10 +4,16 @@ An Enterprise AI Research Agent for the retail industry. This application allows
 
 ## Architecture
 
+**[View Full Architecture Diagram & Data Model](https://drive.google.com/file/d/1CSLsb7r7uG0nI18v8ZsR8EPEu-rfhUJy/view?usp=sharing)**
+
 The application is structured to be modular, separating concerns into distinct layers:
 
 - **Frontend (Streamlit):** User interface for querying and displaying research reports.
 - **Backend (FastAPI):** REST APIs serving requests from the frontend and integrating with the AI workflows.
+- **Data & Knowledge Layer:** 
+  - Relational Data (SQLAlchemy / SQLite) for session history and structured output.
+  - Vector Data (ChromaDB & Gemini Embeddings) for RAG context.
+  - Live External Knowledge via Wikipedia / Web Search APIs.
 - **AI Workflow (LangGraph):** Orchestrates multi-step research plans, evidence collection, and report generation.
 - **Retrieval (ChromaDB):** Semantic search and retrieval over collected evidence.
 - **Database (SQLite & SQLAlchemy):** Persistent storage for research sessions, tasks, and structured data.
