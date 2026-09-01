@@ -15,8 +15,10 @@ def search_sources(state: ResearchState) -> ResearchState:
 
     try:
         for query in state["search_queries"]:
+            import time
             logger.info(f"Searching for: {query}")
             results = provider.search(query)
+            time.sleep(2) # Prevent DuckDuckGo rate limiting
             for r in results:
                 url = r.get("url", "")
                 if url and url not in seen_urls:

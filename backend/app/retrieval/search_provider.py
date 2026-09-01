@@ -40,6 +40,7 @@ class DDGSearchProvider:
                 import wikipedia
                 wikipedia.set_lang("en")
                 wikipedia.set_user_agent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36")
+                wikipedia.set_rate_limiting(True)
                 
                 # Try the original query
                 search_results = wikipedia.search(query, results=2)
