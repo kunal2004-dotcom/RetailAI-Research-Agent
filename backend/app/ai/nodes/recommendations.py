@@ -50,7 +50,7 @@ def generate_recommendations(state: ResearchState) -> ResearchState:
             state['recommendations'] = recs_data
             break
         except Exception as e:
-            if '429' in str(e) or 'RESOURCE_EXHAUSTED' in str(e):
+            if '429' in str(e) or 'RESOURCE_EXHAUSTED' in str(e) or '503' in str(e) or 'UNAVAILABLE' in str(e):
                 if 'GenerateRequestsPerDay' in str(e) or 'quota exceeded' in str(e).lower():
                     state['errors'].append('Google Gemini API Error: You have exceeded your Free Tier daily quota limit. Please generate a new API key from a different Google account or enable billing in Google AI Studio.')
                     break
