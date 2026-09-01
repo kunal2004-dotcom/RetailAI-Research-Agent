@@ -37,38 +37,55 @@ class DDGSearchProvider:
             import logging
             logging.getLogger(__name__).warning(f"DDG Search failed: {e}. Trying Wikipedia.")
             try:
-                import wikipedia
-                wikipedia.set_lang("en")
-                wikipedia.set_user_agent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36")
-                wikipedia.set_rate_limiting(True)
+                import httpx
+                import urllib.parse
                 
-                # Try the original query
-                search_results = wikipedia.search(query, results=2)
+                # Setup custom user agent
+                headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36"}
                 
-                # If Wikipedia finds nothing (because the LLM query is too specific), try simpler terms
-                if not search_results:
-                    words = query.split()
-                    if len(words) > 2:
-                        simplified = " ".join(words[:2])
-                        search_results = wikipedia.search(simplified, results=2)
+                search_url = f"https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch={urllib.parse.quote(query)}&utf8=&format=json"
+                
+                with httpx.Client(headers=headers, timeout=10.0) as client:
+                    resp = client.get(search_url)
+                    resp.raise_for_status()
+                    data = resp.json()
+                    search_results = [r["title"] for r in data.get("query", {}).get("search", [])][:2]
+                    
                     if not search_results:
-                        search_results = wikipedia.search("Artificial Intelligence Retail", results=2)
+                        # Try simpler query
+                        words = query.split()
+                        if len(words) > 2:
+                            simplified = " ".join(words[:2])
+                            search_url2 = f"https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch={urllib.parse.quote(simplified)}&utf8=&format=json"
+                            resp2 = client.get(search_url2)
+                            data2 = resp2.json()
+                            search_results = [r["title"] for r in data2.get("query", {}).get("search", [])][:2]
+                            
+                        if not search_results:
+                            search_url3 = f"https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=Artificial%20Intelligence%20Retail&utf8=&format=json"
+                            resp3 = client.get(search_url3)
+                            data3 = resp3.json()
+                            search_results = [r["title"] for r in data3.get("query", {}).get("search", [])][:2]
 
-                formatted_results = []
-                for title in search_results:
-                    try:
-                        page = wikipedia.page(title, auto_suggest=False)
-                        formatted_results.append({
-                            "title": page.title,
-                            "url": page.url,
-                            "content": page.summary[:1000]
-                        })
-                    except Exception:
-                        pass
+                    formatted_results = []
+                    for title in search_results:
+                        try:
+                            # Get the page summary
+                            summary_url = f"https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro&explaintext&redirects=1&titles={urllib.parse.quote(title)}"
+                            page_resp = client.get(summary_url)
+                            page_data = page_resp.json()
+                            pages = page_data.get("query", {}).get("pages", {})
+                            for page_id, page_info in pages.items():
+                                if page_id != "-1":
+                                    formatted_results.append({
+                                        "title": page_info.get("title", ""),
+                                        "url": f"https://en.wikipedia.org/wiki/{urllib.parse.quote(page_info.get('title', ''))}",
+                                        "content": page_info.get("extract", "")[:1000]
+                                    })
+                        except Exception:
+                            pass
+                            
                 return formatted_results
-            except ImportError:
-                logging.getLogger(__name__).warning("wikipedia package not installed.")
-                return []
             except Exception as we:
                 logging.getLogger(__name__).warning(f"Wikipedia search also failed: {we}")
                 return []
