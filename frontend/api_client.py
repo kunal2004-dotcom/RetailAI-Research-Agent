@@ -13,7 +13,7 @@ class APIClient:
         self.base_url = base_url.rstrip("/")
         
     def _request_with_retry(self, method: str, url: str, **kwargs) -> httpx.Response:
-        max_retries = 12
+        max_retries = 24
         delay = 5.0
         last_exception = None
         

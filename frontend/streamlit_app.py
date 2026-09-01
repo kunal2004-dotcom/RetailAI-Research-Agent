@@ -67,7 +67,7 @@ with st.form("research_form"):
         if len(question.strip()) < 5:
             st.error("Please enter a valid research question (at least 5 characters).")
         else:
-            with st.spinner("Initializing research session... (This may take up to 60 seconds if the Render Free Tier server is waking up from sleep)"):
+            with st.spinner("Initializing research session... (This may take up to 2 minutes if the Render Free Tier server is waking up from sleep)"):
                 try:
                     new_session = api_client.create_research_session(question)
                     st.session_state.current_session_id = new_session["id"]
