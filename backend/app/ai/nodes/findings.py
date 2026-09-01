@@ -67,7 +67,7 @@ def generate_findings(state: ResearchState) -> ResearchState:
                     logger.warning(f'Rate limit hit, sleeping for {sleep_time}s... (Attempt {attempt+1})')
                     time.sleep(sleep_time)
                 else:
-                    state['errors'].append(f'Findings error: {e}')
+                    state['errors'].append(f'Google Gemini API Error: Free Tier rate limit exceeded after multiple retries. Please wait 1 minute and try again.')
                     break
             else:
                 state['errors'].append(f'Findings error: {e}')

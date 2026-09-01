@@ -68,13 +68,16 @@ def extract_evidence(state: ResearchState) -> ResearchState:
             break
         except Exception as e:
             if '429' in str(e) or 'RESOURCE_EXHAUSTED' in str(e):
+                if 'GenerateRequestsPerDay' in str(e) or 'quota exceeded' in str(e).lower():
+                    state['errors'].append('Google Gemini API Error: You have exceeded your Free Tier daily quota limit. Please generate a new API key from a different Google account or enable billing in Google AI Studio.')
+                    break
                 match = re.search(r'retry in ([\d\.]+)s', str(e))
                 sleep_time = float(match.group(1)) + 1.0 if match else 20.0
                 if attempt < 4:
                     logger.warning(f'Rate limit hit, sleeping for {sleep_time}s... (Attempt {attempt+1})')
                     time.sleep(sleep_time)
                 else:
-                    logger.error(f'Evidence extraction error: {e}')
+                    state['errors'].append(f'Google Gemini API Error: Free Tier rate limit exceeded after multiple retries. Please wait 1 minute and try again.')
                     break
             else:
                 logger.error(f'Evidence extraction error: {e}')
